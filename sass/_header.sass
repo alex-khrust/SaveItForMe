@@ -1,0 +1,112 @@
+header
+  width: 100%
+  height: auto
+  padding: 15px 0
+  .container
+    align-items: center
+    justify-content: space-between
+  .logo
+    a
+      height: 32px
+      display: flex
+      justify-content: center
+      align-items: baseline
+      font: bold 24px $rubik
+      letter-spacing: 0.02em
+      line-height: 35px
+      color: $textcolor
+      &:hover
+        text-decoration: none
+    span
+      width: 85px
+      height: 100%
+      display: flex
+      justify-content: center
+      align-items: baseline
+      background: $green
+      border-radius: 4px
+      color: #FFFFFF
+      line-height: 35px
+  .navBurger
+    margin-left: 60px
+
+  .header-search
+    width: auto
+    height: auto
+    font: 500 15px $rubik
+    line-height: 15px
+    letter-spacing: 0.02em
+    background: none
+    border: none
+    margin-left: 20px
+    margin-right: auto
+
+  .lang
+    a
+      font: bold 12px $montserrat
+      &.active
+        color: $green
+
+  .notification
+    width: 36px
+    height: 36px
+    display: flex
+    justify-content: center
+    align-items: center
+    position: relative
+    margin-left: 14px
+    img
+      width: 36px
+      height: 36px
+    span
+      width: 20px
+      height: 20px
+      position: absolute
+      right: 0
+      top: 0
+      display: flex
+      justify-content: center
+      align-items: center
+      border-radius: 50%
+      background: $green
+      color: #FFFFFF
+      font: bold 11px $montserrat
+      line-height: 13px
+
+  .cabinet-link
+    width: auto
+    height: 46px
+    display: flex
+    align-items: center
+    color: $textcolor
+    margin-left: 21px
+    &:hover
+      .user-name
+        color: $textcolor
+      .subtitle
+        color: $green
+    .user-photo
+      width: 46px
+      height: 46px
+      display: flex
+      flex-flow: wrap
+      border: 2px solid $green
+      border-radius: 50%
+      overflow: hidden
+      margin-right: 14px
+    .text
+      width: auto
+      height: 100%
+      display: flex
+      flex-flow: column
+      align-items: flex-start
+      justify-content: space-evenly
+    p
+      margin-bottom: 0
+    .user-name
+      font: bold 12px $rubik
+      line-height: 14px
+    .subtitle
+      font: 500 10px $rubik
+      line-height: 12px
+      transition: .3s

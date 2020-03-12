@@ -1,0 +1,102 @@
+// IMPORT SECTION
+
+@import '../node_modules/bootstrap/scss/bootstrap-reboot.scss'
+// Bootstrap Reboot collection
+@import '../node_modules/bootstrap/scss/mixins/_breakpoints.scss'
+// Bootstrap Breakpoints mixin
+// @import 'node_modules/bootstrap/scss/bootstrap-grid.scss' // Optional Bootstrap Grid
+// @import 'node_modules/bootstrap/scss/utilities/_sizing.scss' // Optional Bootstrap Utilites
+
+
+// USER VARIABLES SECTION
+// Colors
+$green: #0EC92D
+
+$textcolor: #060728
+// Text Color
+$accent: orange
+// Accent Color
+$fontsize: 13px
+// Body Font Size
+$system: -apple-system, BlinkMacSystemFont, Arial, sans-serif
+// System Font Family
+$rubik: Rubik, sans-serif
+// Rubik Font Family
+$montserrat: Montserrat, sans-serif
+// Rubik Font Family
+
+// Bootstrap compatible gutter variable => $gutter
+
+$grid-gutter-width: 20px
+$gutter: $grid-gutter-width
+
+
+// FONTS LOAD SECTION
+
+@mixin font($fname, $fstyle, $fweight, $furl)
+  @font-face
+    font-family: $fname
+    font-style: $fstyle
+    font-weight: $fweight
+    font-display: swap
+    src: local($fname), url($furl) format('woff2')
+
+
+@include font('Rubik', normal, 500, '../fonts/rubik-medium.woff2')
+@include font('Rubik', normal, 700, '../fonts/rubik-bold.woff2')
+
+@include font('Montserrat', normal, 600, '../fonts/montserrat-semibold.woff2')
+@include font('Montserrat', normal, 700, '../fonts/montserrat-bold.woff2')
+
+// GENERAL DOCUMENT STYLES
+
+::placeholder
+  color: #C6C7CC
+
+::selection
+  background-color: $accent
+  color: #fff
+
+input, textarea
+  outline: none
+
+  &:focus:required:invalid
+    border-color: red
+
+  &:required:valid
+    border-color: green
+
+a, button, .btn
+  outline: none
+  -webkit-tap-highlight-color: transparent
+  &:focus
+    outline: none
+
+a
+  color: $textcolor
+  transition: .3s
+  &:hover
+    text-decoration: none
+    color: $green
+
+ul
+  list-style-type: none
+
+
+body
+  font-family: $rubik
+  font-size: $fontsize
+  min-width: 320px
+  position: relative
+  line-height: 1.65
+  letter-spacing: .02em
+  overflow-x: hidden
+  color: $textcolor
+  background: #F6F6F6
+
+.container
+  width: 100%
+  height: auto
+  max-width: 1200px
+  display: flex
+  margin: 0 auto
