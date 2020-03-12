@@ -24,7 +24,7 @@ function browsersync() {
 		server: { baseDir: '.' },
 		notify: false,
     // port: 8080,
-		// online: true, // Work offline without internet connection
+		online: false, // Work offline without internet connection
 		// tunnel: true, tunnel: "saveit",
 	})
 }

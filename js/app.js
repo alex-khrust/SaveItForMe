@@ -16,6 +16,23 @@ document.addEventListener("DOMContentLoaded", function() {
     $("body").removeClass("locked");
     // $("main").css("filter","unset")
   });
-//---------------------------------------------------------------------------
-
+  //---------------------------------------------------------------------------
+  //------------ Accordion submenu -----------
+  $(function() {
+    var link = $(".accordion > .link");
+    var drop = $(".accordion > .dropdawn-submenu");
+    
+    link.on("click",function(){
+      $(link).removeClass("active");
+      $(drop).removeClass("open");
+      $(this).toggleClass("active");
+    });
+    
+    drop.on("click",function(){
+      $(link).removeClass("active");
+      $(drop).removeClass("open");
+      $(this).toggleClass("open");
+    });
+  });
+  //---------------------------------------------------------------------------
 });
