@@ -30,11 +30,13 @@
       <span class="navBurger-line"></span>
     </button>
     <input type="search" class="header-search" name="header-search" id="header-search" placeholder="Поиск по сайту">
+    
+    <button class="[ toggle-button ] [ js-mode-toggle ] toggle-button__icon" aria-hidden="true"></button>
+    
     <div class="lang">
       <a class="active" id="ru" href="#">рус</a> / <a id="eng" href="#">eng</a>
     </div>
     <a class="notification" href="#">
-      <img src="images/dest/notification.svg" alt="Колокольчик">
       <span id="ntfctn-total">5</span>
     </a>
     <a class="cabinet-link" href="#">
@@ -75,19 +77,118 @@
         </li>
       </ul>
     </nav>
+    <a href="#" class="btn">Sign Out</a>
   </aside>
   <!-- /.sidebar -->
   
   <main class="content">
-    <ul class="tabs">
-      <li><a href="#">Все</a></li>
-      <li><a href="#">Личное</a></li>
-      <li><a href="#">Фильмы</a></li>
-      <li><a href="#">Посмотреть</a></li>
-      <li><a href="#">Все</a></li>
-      <li><a href="#">Все</a></li>
-    </ul>
-    <!-- /.tabs -->
+    <section class="tabs-notes">
+      <ul class="tabs">
+        <li class="active"><a href="#">Все</a></li>
+        <li><a href="#">Личное</a></li>
+        <li><a href="#">Фильмы</a></li>
+        <li><a href="#">Посмотреть</a></li>
+        <li><a href="#">Все</a></li>
+        <li><a href="#">Все</a></li>
+      </ul>
+      <!-- /.tabs -->
+      <div class="notes">
+        <ul class="notes-list">
+          <li class="notes-list__item">
+            <h3 class="title">Посмотреть сериал “Каратель” когда выйдет на Mediateka</h3>
+            <div class="hashtag-list">
+              <a href="#" class="hashtag-list__link quickly">Срочно</a>
+              <a href="#" class="hashtag-list__link hobby">#hobby</a>
+              <a href="#" class="hashtag-list__link serials">#serials</a>
+            </div>
+            <div class="remember">
+              <span class="remember__time">19:20</span>
+              <span class="remember__date">Сегодня</span>
+              <div class="remember__confirmation">
+                <input id="remember__confirmation-chbx--1" type="checkbox">
+                <label for="remember__confirmation-chbx--1"></label>
+              </div>
+            </div>
+          </li>
+          <li class="notes-list__item">
+            <h3 class="title">Посмотреть сериал “Каратель” когда выйдет на Mediateka</h3>
+            <div class="hashtag-list">
+              <a href="#" class="hashtag-list__link quickly">Срочно</a>
+              <a href="#" class="hashtag-list__link hobby">#hobby</a>
+              <a href="#" class="hashtag-list__link serials">#serials</a>
+            </div>
+            <div class="remember">
+              <span class="remember__time">19:20</span>
+              <span class="remember__date">Сегодня</span>
+              <div class="remember__confirmation">
+                <input id="remember__confirmation-chbx--2" type="checkbox">
+                <label for="remember__confirmation-chbx--2"></label>
+              </div>
+            </div>
+          </li>
+          <li class="notes-list__item">
+            <h3 class="title">Посмотреть сериал “Каратель” <a href="#" class="hashtag-list__link quickly">Срочно</a> когда выйдет на <a href="#" class="hashtag-list__link hobby">#hobby</a> Mediateka</h3>
+            <div class="hashtag-list">
+              <a href="#" class="hashtag-list__link serials">#serials</a>
+            </div>
+            <div class="remember">
+              <span class="remember__time">19:20</span>
+              <span class="remember__date">Сегодня</span>
+              <div class="remember__confirmation">
+                <input id="remember__confirmation-chbx--3" type="checkbox">
+                <label for="remember__confirmation-chbx--3"></label>
+              </div>
+            </div>
+          </li>
+          <li class="notes-list__item">
+            <h3 class="title">Пересадить пальму</h3>
+            <picture>
+              <img src="images/dest/palm.png" alt="Пальма">
+            </picture>
+            <div class="hashtag-list">
+              <a href="#" class="hashtag-list__link quickly">Срочно</a>
+              <a href="#" class="hashtag-list__link hobby">#hobby</a>
+              <a href="#" class="hashtag-list__link serials">#serials</a>
+            </div>
+            <div class="remember">
+              <span class="remember__time">19:20</span>
+              <span class="remember__date">Сегодня</span>
+              <div class="remember__confirmation">
+                <input id="remember__confirmation-chbx--4" type="checkbox">
+                <label for="remember__confirmation-chbx--4"></label>
+              </div>
+            </div>
+          </li>
+        </ul>
+      </div>
+      <!-- /.notes -->
+    </section>
+    <!-- /.tabs-notes -->
+    <section class="add">
+      <div class="description">
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec
+          hendrerit ac nisl quis tincidunt. Sed a ante enim. Ut feugiat dapib
+          us pretium. Integer sagittis lectus eget odio dapibus, eu viverra
+          eros faucibus. Fusce eleifend id lorem vitae dapibus. Curabitur at
+          gravida arcu. Ut tellus lorem, lobortis a nisl eget,accumsan pellen
+          tesque libero. Donec et est ut tellus hendrerit maximus.</p>
+      </div>
+      <div class="new-note">
+        <form action="" id="new-note-form" method="post">
+          <textarea name="" id="" placeholder="Начни вводить свой текст . . ."></textarea>
+          <div class="btns">
+            <button class="emoji-add" id="emoji"></button>
+            <div class="file-add">
+              <input id="file-add" type="file">
+              <label for="file-add"></label>
+            </div>
+            <button class="send-btn" id="send-btn" type="submit" form="new-note-form"></button>
+          </div>
+        </form>
+      </div>
+      
+    </section>
+    <!-- /.add -->
   </main>
   <!-- /.content -->
 </div>

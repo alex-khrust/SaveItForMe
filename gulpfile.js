@@ -2,7 +2,7 @@ let preprocessor = 'sass'; // Preprocessor (sass, scss, less, styl)
 let fileswatch   = 'html,htm,txt,json,md,woff2'; // List of files extensions for watching & hard reload (comma separated)
 let imageswatch  = 'jpg,jpeg,png,webp,svg'; // List of images extensions for watching & compression (comma separated)
 
-const { src, dest, parallel, series, watch } = require('gulp');
+const { src, dest, parallel, series, watch, lastRun } = require('gulp');
 const sass         = require('gulp-sass');
 const scss         = require('gulp-sass');
 const less         = require('gulp-less');
@@ -24,8 +24,8 @@ function browsersync() {
 		server: { baseDir: '.' },
 		notify: false,
     // port: 8080,
-		online: false, // Work offline without internet connection
-		// tunnel: true, tunnel: "saveit",
+		// online: true, // Work offline without internet connection
+		// tunnel: true, tunnel: "SaveItForMe",
 	})
 }
 
@@ -88,9 +88,9 @@ function deploy() {
 
 function startwatch() {
 	watch('./' + preprocessor + '/**/*', parallel('styles'));
-	watch(['**/*.js', '!js/*.min.js'], parallel('scripts'));
-	watch(['**/*.{' + imageswatch + '}'], parallel('images'));
-	watch(['**/*.{' + fileswatch + '}']).on('change', browserSync.reload);
+	watch(['./**/*.js', '!js/*.min.js'], parallel('scripts'));
+	watch(['./**/*.{' + imageswatch + '}'], parallel('images'));
+	watch(['./**/*.{' + fileswatch + '}']).on('change', browserSync.reload);
 }
 
 exports.browsersync = browsersync;

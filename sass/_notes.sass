@@ -1,0 +1,159 @@
+.notes
+  width: 100%
+  height: calc(100vh - 155px)
+  max-width: 503px
+  display: flex
+  flex-flow: column
+  overflow-y: auto
+  padding-right: 20px
+  @media (max-width: 1200px)
+    padding-right: 12px
+    //order: 3
+  &-list
+    &__item
+      width: 100%
+      height: auto
+      min-height: 166px
+      display: flex
+      flex-flow: column
+      align-items: flex-start
+      justify-content: space-between
+      background: $white
+      border-radius: 8px
+      box-shadow: 0 17px 20px rgba(6, 7, 40, 0.06)
+      padding: 16px 16px 42px
+      margin-bottom: 13px
+      position: relative
+
+      .title
+        font: bold 16px $rubik
+        line-height: 28px
+        margin-bottom: 14px
+        @media (max-width: 1200px)
+          font-size: 14px
+          line-height: 28px
+
+        .hashtag-list__link
+          margin: 0 5px
+      picture
+        width: 100%
+        height: auto
+        margin-bottom: 22px
+        img
+          width: 100%
+          height: auto
+
+.hashtag-list
+  width: 100%
+  height: auto
+  display: flex
+  align-items: center
+  justify-content: flex-start
+  flex-flow: wrap
+  &__link
+    font: bold 10px $montserrat
+    line-height: 12px
+    color: $textcolor
+    border-radius: 6px
+    padding: 9px 13px
+
+  .hashtag-list__link
+    margin: 0 8px 8px 0
+
+
+.quickly
+  background: #B2F5FF
+.hobby
+  background: #B4FFA2
+.serials
+  background: #FACAA6
+
+.remember
+  width: calc(100% - 31px)
+  height: auto
+  position: absolute
+  bottom: 16px
+  left: 14px
+  display: flex
+  align-items: center
+  line-height: 1
+
+  &__time
+    position: relative
+    font: 600 12px $montserrat
+    color: $grey
+    padding-left: 31px
+    margin-right: 9px
+    &:before
+      content: ''
+      position: absolute
+      top: -6px
+      left: 0
+      width: 24px
+      height: 24px
+      background: url("../images/dest/remember__time.svg") no-repeat
+
+  &__date
+    font: 500 12px $rubik
+    color: $lightgrey
+  &__confirmation
+    width: 16px
+    height: 16px
+    margin-left: auto
+    label
+      width: 16px
+      height: 16px
+      border: 2px solid #C6C7CC
+      border-radius: 6px
+      cursor: pointer
+      position: relative
+      margin: 0 16px 0 0
+    input
+
+
+
+input[type=checkbox]
+  display: none
+
+//input[type=checkbox] + label:before
+//  content: ""
+//  display: inline-block
+//  width: 16px
+//  height: 16px
+//  border: 2px solid #C6C7CC
+//  border-radius: 6px
+//  position: absolute
+//  left: 0
+//  top: 50%
+//  transform: translateY(-50%)
+  //border-radius: 5px
+  //border: 1px solid #e6ebff
+
+
+//input[type=checkbox]:checked + label:before
+//  content: ''
+//  position: absolute
+//  left: 0
+//  width: 16px
+//  height: 16px
+//  border: 2px solid #C6C7CC
+//  border-radius: 6px
+//  display: inline-block
+
+input[type=checkbox]:checked + label:after
+  content: ''
+  position: absolute
+  top: 1px
+  left: 4px
+  width: 4px
+  height: 9px
+  transform: rotate(45deg)
+  border-right: 2px solid $green
+  border-bottom: 2px solid $green
+  //top: 50%
+  //left: 50%
+  //transform: translate(-50%, -50%)
+  //width: 10px
+  //height: 10px
+  //background: $green
+  //border-radius: 6px

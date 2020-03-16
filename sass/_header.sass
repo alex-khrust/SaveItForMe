@@ -17,6 +17,10 @@ header
       color: $textcolor
       &:hover
         text-decoration: none
+      @media (max-width: 1200px)
+        height: auto
+        font-size: 16px
+        line-height: 1
     span
       width: 85px
       height: 100%
@@ -25,8 +29,14 @@ header
       align-items: baseline
       background: $green
       border-radius: 4px
-      color: #FFFFFF
+      color: $white
       line-height: 35px
+      @media (max-width: 1200px)
+        line-height: 1
+        width: auto
+        height: auto
+        padding: 3px
+
   .navBurger
     margin-left: 60px
 
@@ -40,12 +50,16 @@ header
     border: none
     margin-left: 20px
     margin-right: auto
+    @media (max-width: 1200px)
+      font-size: 12px
 
   .lang
     a
       font: bold 12px $montserrat
       &.active
-        color: $green
+        color: $green !important
+      @media (max-width: 1200px)
+        font-size: 10px
 
   .notification
     width: 36px
@@ -55,9 +69,7 @@ header
     align-items: center
     position: relative
     margin-left: 14px
-    img
-      width: 36px
-      height: 36px
+    background: url("../images/dest/notification.svg") no-repeat
     span
       width: 20px
       height: 20px
@@ -69,7 +81,7 @@ header
       align-items: center
       border-radius: 50%
       background: $green
-      color: #FFFFFF
+      color: $white
       font: bold 11px $montserrat
       line-height: 13px
 
@@ -84,7 +96,7 @@ header
       .user-name
         color: $textcolor
       .subtitle
-        color: $green
+        color: $green !important
     .user-photo
       width: 46px
       height: 46px

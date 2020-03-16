@@ -1,0 +1,91 @@
+.add
+  width: 100%
+  height: auto
+  display: flex
+  flex-flow: column
+  padding-left: 30px
+  margin-top: 57px
+  margin-left: auto
+  @media (max-width: 1200px)
+    padding-left: 12px
+    margin-top: 0
+    //order: 2
+  .description
+    width: 100%
+    height: 100%
+    max-height: 500px
+    font: 500 13px $rubik
+    line-height: 28px
+    color: $grey
+    background: $white
+    border-radius: 6px
+    padding: 22px
+    margin-bottom: 21px
+
+
+.new-note
+  width: 100%
+  height: 100%
+  max-height: 341px
+  display: flex
+  flex-flow: column
+  justify-content: space-between
+  background: $white
+  border: 2px solid rgba(229, 229, 229, 0.6)
+  border-radius: 6px
+  font: bold 14px $montserrat
+  line-height: 17px
+  margin-bottom: 30px
+
+  form
+    width: 100%
+    height: 100%
+    display: flex
+    flex-flow: column
+    justify-content: space-between
+
+  textarea
+    width: auto
+    height: 100%
+    max-height: 250px
+    background: $white
+    font: bold 14px $montserrat
+    line-height: 17px
+    margin: 22px
+    resize: none
+    border: none
+    &::placeholder
+      color: $textcolor
+
+  .btns
+    width: 100%
+    height: auto
+    display: flex
+    align-items: center
+    justify-content: flex-end
+    padding: 0 22px
+    margin-bottom: 11px
+    label
+      margin: 0
+    button, label
+      width: 30px
+      height: 30px
+      cursor: pointer
+      background-color: unset
+      border: none
+    button, .file-add
+      margin-left: 10px
+
+  .emoji-add
+    background: url(../images/dest/emoji.svg) no-repeat
+
+  .file-add
+    width: 30px
+    height: 30px
+    input
+      display: none
+    label
+      background: url(../images/dest/file.svg) no-repeat
+
+  .send-btn
+    background: url(../images/dest/send.svg) no-repeat

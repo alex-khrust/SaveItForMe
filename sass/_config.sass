@@ -10,9 +10,11 @@
 
 // USER VARIABLES SECTION
 // Colors
+$body-bg: #F6F6F6
 $green: #0EC92D
 $lightgrey: #C6C7CC
 $grey: #807F8F
+$white: #ffffff
 
 $textcolor: #060728
 // Text Color
@@ -57,7 +59,7 @@ $gutter: $grid-gutter-width
 
 ::selection
   background-color: $accent
-  color: #fff
+  color: $white
 
 input, textarea
   outline: none
@@ -79,7 +81,10 @@ a
   transition: .3s
   &:hover
     text-decoration: none
-    color: $green
+    color: $green !important
+
+.active a
+  color: $green !important
 
 ul
   list-style-type: none
@@ -96,7 +101,7 @@ body
   letter-spacing: .02em
   overflow-x: hidden
   color: $textcolor
-  background: #F6F6F6
+  background: $body-bg
 
 .container
   width: 100%
@@ -104,3 +109,41 @@ body
   max-width: 1200px
   display: flex
   margin: 0 auto
+  @media (max-width: 1200px)
+    padding: 0 15px
+
+main
+  width: 100%
+  height: auto
+  display: flex
+  //flex-flow: wrap
+  margin-top: 22px
+
+.btn
+  width: auto
+  height: auto
+  font: 500 15px $rubik
+  line-height: 1
+  color: $white
+  background: $green
+  border-radius: 47px
+  display: flex
+  align-items: center
+  justify-content: center
+  padding: 16px 45px
+  &:hover
+    color: $white
+  @media (max-width: 1200px)
+    padding: 11px 25px
+    font-size: 12px
+
+// Custom scrollbar
+/* width */
+::-webkit-scrollbar
+  width: 4px
+
+/* Handle */
+::-webkit-scrollbar-thumb
+  background: $green
+  border-radius: 4px
+
