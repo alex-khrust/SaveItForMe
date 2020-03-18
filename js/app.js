@@ -3,19 +3,28 @@ document.addEventListener("DOMContentLoaded", function() {
 	// Custom JS
 
 	//------------ menu hamburger -----------
+  var wsize = 768;
+  var windowWidth = $(window).width();
+  
   $("#navToggle").click(function () {
     $(".navBurger-line").toggleClass("active");
-    // $(".top-nav").toggleClass("open");
-    // $("body").toggleClass("locked");
-    // $("main").css("filter","blur(5px)")
+    $(".sidebar").toggleClass("open");
+    $("main").toggleClass("blur").css({"transition":".3s"});
+    if (windowWidth < wsize) $("body").toggleClass("locked");
+    else $("body").removeClass("locked");
   });
-  $(".top-nav").click(function () {
-    $(this).removeClass("active");
+  $("main , .sidebar a").click(function () {
     $(".navBurger-line").removeClass("active");
-    $(".top-nav").removeClass("open");
-    // $("body").removeClass("locked");
-    // $("main").css("filter","unset")
+    $(".sidebar").removeClass("open");
+    $("main").removeClass("blur").css({"transition":".3s"});
+    $("body").removeClass("locked");
   });
+  
+  $(window).resize(function () {
+    if (windowWidth < wsize) $("body.locked");
+    else $("body").removeClass("locked");
+  });
+  
   //---------------------------------------------------------------------------
   //------------ Accordion submenu -----------
   $(function() {
@@ -129,4 +138,5 @@ document.addEventListener("DOMContentLoaded", function() {
   
   applySetting();
   //---------------------------------------------------------------------------
+  
 });

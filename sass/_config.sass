@@ -141,6 +141,11 @@ main
     padding: 11px 25px
     font-size: 12px
 
+@media (max-width: 768px)
+  .blur
+    filter: blur(5px)
+    transition: .3s ease
+
 // Custom scrollbar
 /* width */
 ::-webkit-scrollbar
@@ -151,3 +156,5 @@ main
   background: $green
   border-radius: 4px
 
+::-webkit-scrollbar:horizontal
+  height: 4px

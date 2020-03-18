@@ -9,10 +9,23 @@
   justify-content: space-between
   position: relative
   @media (max-width: 1200px)
-    width: 100%
     max-width: 140px
   @media (max-width: 768px)
     display: none
+    &.open
+      display: flex
+      max-width: 100%
+      height: auto
+      position: absolute
+      left: 0
+      background: var(--background)
+      transition: 500ms ease-in-out
+      margin-top: 0
+      z-index: 999
+      .sidenav
+        padding-top: 15px
+        padding-left: 25px
+        transition: .5s ease-in-out
 .sidenav
   .accordion
     &>li
@@ -60,3 +73,7 @@
 .sidebar
   .btn
     margin-bottom: 32px
+    @media (max-width: 768px)
+      margin: 32px auto
+
+

@@ -125,12 +125,13 @@ body {
   /*padding: 0.5rem 1rem;*/
   transition: background 500ms ease-in-out, color 200ms ease;
   outline: none;
+  margin-left: auto !important;
   margin-right: 28px !important;
 }
 
 @media (max-width: 768px) {
   .toggle-button {
-    display: none;
+    margin-right: 15px !important;
   }
 }
 
