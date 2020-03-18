@@ -134,6 +134,11 @@ body {
     margin-right: 15px !important;
   }
 }
+@media (max-width: 360px) {
+  .toggle-button {
+    margin-right: 4px !important;
+  }
+}
 
 .toggle-button__icon {
   background: var(--button-icon);

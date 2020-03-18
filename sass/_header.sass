@@ -68,6 +68,7 @@ header
       display: none
 
   .lang
+    min-width: 53px
     a
       font: bold 12px $montserrat
       &.active
@@ -80,6 +81,7 @@ header
   .notification
     width: 36px
     height: 36px
+    min-width: 36px
     display: flex
     justify-content: center
     align-items: center
@@ -88,6 +90,8 @@ header
     background: url("../images/dest/notification.svg") no-repeat
     @media (max-width: 576px)
       margin-left: 10px
+    @media (max-width: 360px)
+      margin-left: 0
     span
       width: 20px
       height: 20px

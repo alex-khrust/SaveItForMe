@@ -138,5 +138,26 @@ document.addEventListener("DOMContentLoaded", function() {
   
   applySetting();
   //---------------------------------------------------------------------------
+  // Переключение между табами, добавление класса active и скрытие контента ----------
+  // $(".tab_content").hide();
+  // $(".tab_content:first").show();
+  // /* в режиме вкладок */
+  // $(".tabs__list a").click(function () {
+  //   $(".tab_content").hide();
+  //   var activeTab = $(this).attr("rel");
+  //   $("#" + activeTab).fadeIn();
+  //   $(".tabs__list a").removeClass("active");
+  //   $(this).addClass("active");
+  // });
   
+  $(".tabs__list a").on("click", function(){
+    //Tab styles
+    $(".tabs__list a").removeClass("active");
+    $(this).addClass("active");
+    //Div show and hide
+    var activeTab = $(this).find("a").attr("href");
+    $(".tab-content").removeClass("active");
+    $(activeTab).addClass("active");
+  })
+  //---------------------------------------------------------------------
 });
