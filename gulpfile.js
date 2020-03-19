@@ -46,7 +46,8 @@ function styles() {
 function scripts() {
 	return src([
 		'node_modules/jquery/dist/jquery.min.js', // npm vendor example (npm i --save-dev jquery)
-		'js/anitabs.js',
+		// 'node_modules/swiper/js/swiper.min.js', // Слайдер Swiper
+		// 'node_modules/magnific-popup/dist/jquery.magnific-popup.min.js',
 		'js/app.js' // app.js. Always at the end
 		])
 	.pipe(concat('app.min.js'))

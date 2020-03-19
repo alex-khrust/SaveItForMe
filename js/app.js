@@ -16,7 +16,7 @@ document.addEventListener("DOMContentLoaded", function() {
   $("main , .sidebar a").click(function () {
     $(".navBurger-line").removeClass("active");
     $(".sidebar").removeClass("open");
-    $("main").removeClass("blur").css({"transition":".3s"});
+    $("main").removeClass("blur");
     $("body").removeClass("locked");
   });
   
@@ -29,8 +29,8 @@ document.addEventListener("DOMContentLoaded", function() {
   //------------ Accordion submenu -----------
   $(function() {
     var link = $(".accordion > .link");
-    var drop = $(".accordion > .dropdawn-submenu");
-    var subLink = $(".accordion > .dropdawn-submenu > a");
+    var drop = $(".dropdawn-submenu");
+    var subLink = $(".submenu li");
     
     link.on("click",function(){
       $(link).removeClass("active");
@@ -50,6 +50,46 @@ document.addEventListener("DOMContentLoaded", function() {
     });
   });
   //---------------------------------------------------------------------------
+  // jQuery Sliding Line -----------------------------------------
+  //var
+  var $nav = $('.tabs__list'),
+    $line = $('<li class="active-underline">').appendTo($nav),
+    $activeLi,
+    lineWidth,
+    liPos;
+  
+  function refresh() {
+    $activeLi = $nav.find('li.active');
+    lineWidth = $activeLi.outerWidth();
+    liPos = $activeLi.position().left;
+  }
+  refresh();
+  
+  $nav.css('position','relative');
+  
+  //line setup
+  function lineSet() {
+    $line.css({
+      'position':'absolute',
+      'bottom':'-3px',
+      'height':'4px',
+      'background-color':'#0ec92d',
+      'border-radius': '4px',
+    }).animate({
+      'left':liPos,
+      'width':lineWidth
+    }, 300);
+  }
+  lineSet();
+  
+  //on click
+  $nav.find('li').on('click', function() {
+    $activeLi.removeClass('active');
+    $(this).addClass('active');
+    refresh();
+    lineSet();
+  });
+  //---------------------------------------------------------------------
   // Remove the no JS class so that the button will show
   document.documentElement.classList.remove('no-js');
   
@@ -138,26 +178,8 @@ document.addEventListener("DOMContentLoaded", function() {
   
   applySetting();
   //---------------------------------------------------------------------------
-  // Переключение между табами, добавление класса active и скрытие контента ----------
-  // $(".tab_content").hide();
-  // $(".tab_content:first").show();
-  // /* в режиме вкладок */
-  // $(".tabs__list a").click(function () {
-  //   $(".tab_content").hide();
-  //   var activeTab = $(this).attr("rel");
-  //   $("#" + activeTab).fadeIn();
-  //   $(".tabs__list a").removeClass("active");
-  //   $(this).addClass("active");
-  // });
   
-  $(".tabs__list a").on("click", function(){
-    //Tab styles
-    $(".tabs__list a").removeClass("active");
-    $(this).addClass("active");
-    //Div show and hide
-    var activeTab = $(this).find("a").attr("href");
-    $(".tab-content").removeClass("active");
-    $(activeTab).addClass("active");
-  })
-  //---------------------------------------------------------------------
 });
+
+
+
