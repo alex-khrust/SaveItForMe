@@ -162,20 +162,20 @@ body {
 
 .notes-list__item,
 .add > .description,
-.add > .new-note,
-.add > .new-note textarea {
+.note-save,
+.note-save textarea {
   background: var(--background-notes);
   transition: 500ms ease-in-out, color 200ms ease;
 }
 
 input,
-.add > .new-note textarea,
-.add > .new-note textarea::placeholder {
+.note-save textarea,
+.note-save textarea::placeholder {
   color: var(--text-color);
   transition: 500ms ease-in-out, color 500ms ease;
 }
 
-.add > .new-note {
+.note-save {
   border: 2px solid var(--background-notes-border);
 }
 
@@ -212,17 +212,17 @@ header a,
   transition: 500ms ease;
 }
 
-.new-note .emoji-add {
+.note-save .emoji-add {
   background: var(--emoji);
   transition: 500ms ease;
 }
 
-.new-note .file-add label {
+.note-save .file-add label {
   background: var(--file);
   transition: 500ms ease;
 }
 
-.new-note .send-btn {
+.note-save .send-btn {
   background: var(--send);
   transition: 500ms ease;
 }

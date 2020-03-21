@@ -19,10 +19,11 @@
 
 </head>
 <body>
+
 <header class="header">
   <div class="container">
     <div class="logo">
-      <a href="#">
+      <a href="cabinet.html">
         SaveIt<span>ForMe</span>
       </a>
     </div>
@@ -34,177 +35,345 @@
     <button class="[ toggle-button ] [ js-mode-toggle ] toggle-button__icon" aria-hidden="true"></button>
     
     <div class="lang">
-      <a class="active" id="ru" href="#">рус</a> / <a id="eng" href="#">eng</a>
+      <a class="active" id="ru" href="#">Рус</a>
+      <a id="eng" href="#">Eng</a>
     </div>
-    <a class="notification" href="#">
-      <span id="ntfctn-total">5</span>
-    </a>
-    <a class="cabinet-link" href="#">
-      <img src="images/dest/user.png" alt="Фото пользователя" class="user-photo">
-      <div class="text">
-        <p class="user-name">Илья Яцеленко</p>
-        <p class="subtitle">Личный кабинет</p>
-      </div>
-    </a>
+    <div class="registration">
+      <button class="log-in">Log in</button>
+      <button class="register">Register</button>
+    </div>
+    <div class="menu">
+      <nav class="nav">
+        <ul id="accordion" class="accordion">
+          <li class="link active">
+            <a href="#">Documents</a>
+          </li>
+          <li class="dropdawn-submenu">
+            <span>Discover</span>
+            <ul class="submenu">
+              <li><a href="#">Link</a></li>
+              <li><a href="#">Link</a></li>
+            </ul>
+          </li>
+          <li class="dropdawn-submenu open">
+            <span>Calendar</span>
+            <ul class="submenu">
+              <li><a href="#">Link</a></li>
+              <li class="active"><a href="#">Link</a></li>
+            </ul>
+          </li>
+          <li class="dropdawn-submenu">
+            <span>Setting</span>
+            <ul class="submenu">
+              <li><a href="#">Link</a></li>
+              <li><a href="#">Link</a></li>
+            </ul>
+          </li>
+        </ul>
+      </nav>
+      <a href="#" class="btn">Sign Out</a>
+    </div>
+    <!-- /.menu -->
   </div>
 </header>
 <!-- /.header -->
 
-<div class="container">
-  <aside class="sidebar">
-    <nav class="sidenav">
-      <ul id="accordion" class="accordion">
-        <li class="link active">
-          <a href="#">Documents</a>
-        </li>
-        <li class="dropdawn-submenu">
-          <span>Discover</span>
-          <ul class="submenu">
-            <li><a href="#">Link</a></li>
-            <li><a href="#">Link</a></li>
-          </ul>
-        </li>
-        <li class="dropdawn-submenu open">
-          <span>Calendar</span>
-          <ul class="submenu">
-            <li><a href="#">Link</a></li>
-            <li class="active"><a href="#">Link</a></li>
-          </ul>
-        </li>
-        <li class="dropdawn-submenu">
-          <span>Setting</span>
-          <ul class="submenu">
-            <li><a href="#">Link</a></li>
-            <li><a href="#">Link</a></li>
-          </ul>
-        </li>
-      </ul>
-    </nav>
-    <a href="#" class="btn">Sign Out</a>
-  </aside>
-  <!-- /.sidebar -->
-  
-  <main class="content">
-    <section class="tabs-notes">
-      <div class="tabs">
-        <ul class="tabs__list">
-          <li class="active"><a href="#">Все</a></li>
-          <li><a href="#">Личное</a></li>
-          <li><a href="#">Фильмы</a></li>
-          <li><a href="#">Посмотреть</a></li>
-          <li><a href="#">Все</a></li>
-          <li><a href="#">Все</a></li>
+<main class="content">
+  <section class="hero">
+    <div class="container">
+      <div class="hero-description">
+        <div class="hero-description__title">
+          <h1>helps you memorize
+          and improve work efficiency.</h1>
+        </div>
+        <p>We understand the intricacies of web development inside-out. That's why we build rock-solid Mobile and Web applications enriched with user-centered visual experiences.</p>
+        <div class="btns">
+          <a href="#" class="btn">Start Now</a>
+          <a href="#" class="btn btn-transparent">How It Work</a>
+        </div>
+      </div>
+      <div class="notes">
+        <ul class="notes-list">
+          <li class="notes-list__item">
+            <h3 class="title">Посмотреть сериал “Каратель” когда выйдет на Mediateka</h3>
+            <div class="hashtag-list">
+              <a class="hashtag-list__link quickly">Срочно</a>
+              <a class="hashtag-list__link hobby">#hobby</a>
+              <a class="hashtag-list__link serials">#serials</a>
+            </div>
+            <div class="remember">
+              <span class="remember__time">19:20</span>
+              <span class="remember__date">Сегодня</span>
+              <div class="remember__confirmation">
+                <input id="remember__confirmation-chbx--1" type="checkbox" disabled>
+                <label for="remember__confirmation-chbx--1"></label>
+              </div>
+            </div>
+          </li>
+          <li class="notes-list__item">
+            <h3 class="title">Посмотреть сериал “Каратель” когда выйдет на Mediateka</h3>
+            <div class="hashtag-list">
+              <a class="hashtag-list__link quickly">Срочно</a>
+              <a class="hashtag-list__link hobby">#hobby</a>
+              <a class="hashtag-list__link serials">#serials</a>
+            </div>
+            <div class="remember">
+              <span class="remember__time">19:20</span>
+              <span class="remember__date">Сегодня</span>
+              <div class="remember__confirmation">
+                <input id="remember__confirmation-chbx--2" type="checkbox" disabled>
+                <label for="remember__confirmation-chbx--2"></label>
+              </div>
+            </div>
+          </li>
+          <li class="notes-list__item">
+            <h3 class="title">Посмотреть сериал “Каратель” <a class="hashtag-list__link quickly">Срочно</a> когда выйдет на <a class="hashtag-list__link hobby">#hobby</a> Mediateka</h3>
+            <div class="hashtag-list">
+              <a class="hashtag-list__link serials">#serials</a>
+            </div>
+            <div class="remember">
+              <span class="remember__time">19:20</span>
+              <span class="remember__date">Сегодня</span>
+              <div class="remember__confirmation">
+                <input id="remember__confirmation-chbx--3" type="checkbox" disabled>
+                <label for="remember__confirmation-chbx--3"></label>
+              </div>
+            </div>
+          </li>
         </ul>
       </div>
-      <!-- /.tabs -->
-      <div class="tabs-content">
-        <div class="notes">
-          <ul class="notes-list">
-            <li class="notes-list__item">
-              <h3 class="title">Посмотреть сериал “Каратель” когда выйдет на Mediateka</h3>
-              <div class="hashtag-list">
-                <a href="#" class="hashtag-list__link quickly">Срочно</a>
-                <a href="#" class="hashtag-list__link hobby">#hobby</a>
-                <a href="#" class="hashtag-list__link serials">#serials</a>
-              </div>
-              <div class="remember">
-                <span class="remember__time">19:20</span>
-                <span class="remember__date">Сегодня</span>
-                <div class="remember__confirmation">
-                  <input id="remember__confirmation-chbx--1" type="checkbox">
-                  <label for="remember__confirmation-chbx--1"></label>
+    </div>
+  </section>
+  <!-- /.hero -->
+  <section class="terms">
+    <div class="container">
+      <ul class="ease">
+        <li>
+          <span>01</span>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris vitae commodo mi. Aliquam hendrerit id magna vel molestie.</p>
+        </li>
+        <li>
+          <span>02</span>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris vitae commodo mi. Aliquam hendrerit id magna vel molestie.</p>
+        </li>
+        <li>
+          <span>03</span>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris vitae commodo mi. Aliquam hendrerit id magna vel molestie.</p>
+        </li>
+      </ul>
+      <!-- /.ease -->
+      <div class="demo-slider swiper-container">
+        <ul class="demo-slider-list swiper-wrapper">
+          <li class="swiper-slide">
+            <div class="note-save">
+              <form action="" id="form-save" method="post">
+                <textarea name="" id="" placeholder="Начни вводить свой текст . . ."></textarea>
+                <div class="btns">
+                  <button class="btn" id="send-btn" type="submit" form="form-save">Save</button>
                 </div>
-              </div>
-            </li>
-            <li class="notes-list__item">
-              <h3 class="title">Посмотреть сериал “Каратель” когда выйдет на Mediateka</h3>
-              <div class="hashtag-list">
-                <a href="#" class="hashtag-list__link quickly">Срочно</a>
-                <a href="#" class="hashtag-list__link hobby">#hobby</a>
-                <a href="#" class="hashtag-list__link serials">#serials</a>
-              </div>
-              <div class="remember">
-                <span class="remember__time">19:20</span>
-                <span class="remember__date">Сегодня</span>
-                <div class="remember__confirmation">
-                  <input id="remember__confirmation-chbx--2" type="checkbox">
-                  <label for="remember__confirmation-chbx--2"></label>
-                </div>
-              </div>
-            </li>
-            <li class="notes-list__item">
-              <h3 class="title">Посмотреть сериал “Каратель” <a href="#" class="hashtag-list__link quickly">Срочно</a> когда выйдет на <a href="#" class="hashtag-list__link hobby">#hobby</a> Mediateka</h3>
-              <div class="hashtag-list">
-                <a href="#" class="hashtag-list__link serials">#serials</a>
-              </div>
-              <div class="remember">
-                <span class="remember__time">19:20</span>
-                <span class="remember__date">Сегодня</span>
-                <div class="remember__confirmation">
-                  <input id="remember__confirmation-chbx--3" type="checkbox">
-                  <label for="remember__confirmation-chbx--3"></label>
-                </div>
-              </div>
-            </li>
-            <li class="notes-list__item">
-              <h3 class="title">Пересадить пальму</h3>
-              <div class="picture">
-                <img src="images/dest/palm.png" alt="Пальма">
-              </div>
-              <div class="hashtag-list">
-                <a href="#" class="hashtag-list__link quickly">Срочно</a>
-                <a href="#" class="hashtag-list__link hobby">#hobby</a>
-                <a href="#" class="hashtag-list__link serials">#serials</a>
-              </div>
-              <div class="remember">
-                <span class="remember__time">19:20</span>
-                <span class="remember__date">Сегодня</span>
-                <div class="remember__confirmation">
-                  <input id="remember__confirmation-chbx--4" type="checkbox">
-                  <label for="remember__confirmation-chbx--4"></label>
-                </div>
-              </div>
-            </li>
-          </ul>
-        </div>
-        <!-- /.notes -->
-      </div>
-      <!-- /.tabs-content -->
-    </section>
-    <!-- /.tabs-notes -->
-    <section class="add">
-      <div class="description">
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec
-          hendrerit ac nisl quis tincidunt. Sed a ante enim. Ut feugiat dapib
-          us pretium. Integer sagittis lectus eget odio dapibus, eu viverra
-          eros faucibus. Fusce eleifend id lorem vitae dapibus. Curabitur at
-          gravida arcu. Ut tellus lorem, lobortis a nisl eget,accumsan pellen
-          tesque libero. Donec et est ut tellus hendrerit maximus.</p>
-      </div>
-      <div class="new-note">
-        <form action="" id="new-note-form" method="post">
-          <textarea name="" id="" placeholder="Начни вводить свой текст . . ."></textarea>
-          <div class="btns">
-            <button class="emoji-add" id="emoji"></button>
-            <div class="file-add">
-              <input id="file-add" type="file">
-              <label for="file-add"></label>
+              </form>
             </div>
-            <button class="send-btn" id="send-btn" type="submit" form="new-note-form"></button>
-          </div>
+          </li>
+          <li class="swiper-slide">
+            <div class="notes">
+              <div class="notes-list__item">
+                <h3 class="title">Посмотреть сериал “Каратель” когда выйдет на Mediateka</h3>
+                <div class="hashtag-list">
+                  <a class="hashtag-list__link quickly">Срочно</a>
+                  <a class="hashtag-list__link hobby">#hobby</a>
+                  <a class="hashtag-list__link serials">#serials</a>
+                </div>
+                <div class="remember">
+                  <span class="remember__time">19:20</span>
+                  <span class="remember__date">Сегодня</span>
+                  <div class="remember__confirmation">
+                    <input id="remember__confirmation-chbx--1" type="checkbox" disabled>
+                    <label for="remember__confirmation-chbx--1"></label>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </li>
+          <li class="swiper-slide">
+            <div class="cloud-tags">
+              <img src="images/dest/words.png" alt="Теги">
+            </div>
+          </li>
+        </ul>
+      </div>
+      <!-- /.demo-slider -->
+      <ul class="tarifs">
+        <li class="tarifs__item">
+          <h4 class="tarifs-title">Бесплатно</h4>
+          <ul class="tarifs-options">
+            <li class="checked">Lorem ipsum dolor consectetur</li>
+            <li>Lorem ipsum dolor consectet</li>
+            <li>Lorem ipsum dolor csectetur</li>
+            <li>Lorem ipsum dolor consecteur</li>
+            <li>Lorem ipsum dolor consetur</li>
+          </ul>
+          <a href="#" class="btn">Start Now</a>
+        </li>
+        <li class="tarifs__item">
+          <h4 class="tarifs-title">Базовая</h4>
+          <ul class="tarifs-options">
+            <li class="checked">Lorem ipsum dolor consectetur</li>
+            <li class="checked">Lorem ipsum dolor consectet</li>
+            <li class="checked">Lorem ipsum dolor csectetur</li>
+            <li>Lorem ipsum dolor consecteur</li>
+            <li>Lorem ipsum dolor consetur</li>
+          </ul>
+          <a href="#" class="btn">Start Now</a>
+        </li>
+        <li class="tarifs__item">
+          <h4 class="tarifs-title">Стандарт</h4>
+          <ul class="tarifs-options">
+            <li class="checked">Lorem ipsum dolor consectetur</li>
+            <li class="checked">Lorem ipsum dolor consectet</li>
+            <li class="checked">Lorem ipsum dolor csectetur</li>
+            <li class="checked">Lorem ipsum dolor consecteur</li>
+            <li>Lorem ipsum dolor consetur</li>
+          </ul>
+          <a href="#" class="btn">Start Now</a>
+        </li>
+        <li class="tarifs__item">
+          <h4 class="tarifs-title">Дорагабагата</h4>
+          <ul class="tarifs-options">
+            <li class="checked">Lorem ipsum dolor consectetur</li>
+            <li class="checked">Lorem ipsum dolor consectet</li>
+            <li class="checked">Lorem ipsum dolor csectetur</li>
+            <li class="checked">Lorem ipsum dolor consecteur</li>
+            <li class="checked">Lorem ipsum dolor consetur</li>
+          </ul>
+          <a href="#" class="btn">Start Now</a>
+        </li>
+      </ul>
+      <!-- /.tarifs -->
+    </div>
+  </section>
+  <!-- /.terms -->
+  <section class="info">
+    <div class="container">
+      <div class="description">
+        <h2 class="info-title">Neque porro quisquam est</h2>
+        <h3 class="info-subtitle">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris vitae commodo mi. Aliquam hendrerit id magna vel molestie. Aenean non consequat urna, eu laoreet erat</h3>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam quis dignissim mauris. Donec hendrerit lectus eget nulla fringilla sagittis. Proin que dui a justo porta tempus. Nunc in ligula velit. Cras bibendum dolor eget feugiat sollicitudin. Nunc quam massa, gravida et venenatis quis, commodo in lectus. Curabitur eros justo, mollis ac hendrerit sit amet, volutpat id libero. Sed tempor ullamcorper nulla ut bibendum. Quisque et sagittis nisl. Vestib ulum ultricies nec odio sit amet tempus. Aenean diam odio, convallis at elit in, laoreet sollicitudin augue. Pellentesque et neque phggesque, tristique felis vitae, imperdiet tortor.</p>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam quis dignissim mauris. Donec hendrerit lectus eget nulla fringilla sagittis. Proin que dui a justo porta tempus. Nunc in ligula velit. Cras bibendum dolor eget feugiat sollicitudin. Nunc quam massa, gravida et venenatis quis, commodo in lectus. Curabitur eros justo, mollis ac hendrerit sit amet, volutpat id libero. Sed tempor ullamcorper nulla ut bibendum. Quisque et sagittis nisl. Vestib ulum ultricies nec odio sit amet tempus. Aenean diam odio, convallis at elit in, laoreet sollicitudin augue. Pellentesque et neque phggesque, tristique felis vitae, imperdiet tortor.</p>
+      </div>
+      <!-- /.description -->
+      <div class="advantages">
+        <h2 class="info-title">All information in a visual form</h2>
+        <h3 class="info-subtitle">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris vitae commodo mi. Aliquam hendrerit id magna vel molestie. Aenean non consequat urna, eu laoreet erat</h3>
+        <ul class="advantages-list">
+          <li class="advantages-list__item ease">
+            <h4 class="title">Легко и просто</h4>
+            <p>Lorem ipsum dolor sit amet, con sectetur adipiscing elit. Mauris vitae commodo mi. Alinff re tre</p>
+          </li>
+          <li class="advantages-list__item everywhere">
+            <h4 class="title">На любом устройстве</h4>
+            <p>Lorem ipsum dolor sit amet, con sectetur adipiscing elit. Mauris vitae commodo mi. Alinff re tre</p>
+          </li>
+          <li class="advantages-list__item reminders">
+            <h4 class="title">Напоминания</h4>
+            <p>Lorem ipsum dolor sit amet, con sectetur adipiscing elit. Mauris vitae commodo mi. Alinff re tre</p>
+          </li>
+          <li class="advantages-list__item task">
+            <h4 class="title">Задачи</h4>
+            <p>Lorem ipsum dolor sit amet, con sectetur adipiscing elit. Mauris vitae commodo mi. Alinff re tre</p>
+          </li>
+          <li class="advantages-list__item customization">
+            <h4 class="title">Кастомизация</h4>
+            <p>Lorem ipsum dolor sit amet, con sectetur adipiscing elit. Mauris vitae commodo mi. Alinff re tre</p>
+          </li>
+          <li class="advantages-list__item free">
+            <h4 class="title">Бесплатно</h4>
+            <p>Lorem ipsum dolor sit amet, con sectetur adipiscing elit. Mauris vitae commodo mi. Alinff re tre</p>
+          </li>
+        </ul>
+      </div>
+      <!-- /.advantages -->
+    </div>
+  </section>
+  <!-- /.info -->
+  <section class="capability">
+    <div class="container">
+      <h2 class="capability-title">How can we help you</h2>
+      <ul class="capability-list">
+        <li class="capability-list__item">
+          <img src="images/dest/it.jpg" alt="">
+          <h4 class="title">ИТшнику</h4>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris vitae commodo mi. Aliquam hendrerit id magna vel molestie. Aenean non consequat urna, eu laoreet erat. Sed egestas iaculis facilisis.</p>
+        </li>
+        <li class="capability-list__item">
+          <img src="images/dest/student.jpg" alt="">
+          <h4 class="title">Студенту</h4>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris vitae commodo mi. Aliquam hendrerit id magna vel molestie. Aenean non consequat urna, eu laoreet erat. Sed egestas iaculis facilisis.</p>
+        </li>
+        <li class="capability-list__item">
+          <img src="images/dest/manager.jpg" alt="">
+          <h4 class="title">Менеджеру</h4>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris vitae commodo mi. Aliquam hendrerit id magna vel molestie. Aenean non consequat urna, eu laoreet erat. Sed egestas iaculis facilisis.</p>
+        </li>
+      </ul>
+      <div class="subscribe">
+        <h3 class="subscribe-title">Sign up for our newsletter</h3>
+        <h4 class="subscribe-subtitle">Useful articles, promotions, news - get it all now!
+        </h4>
+        <form class="form-subscibe" id="form-subscibe" action="" method="post">
+          <input id="subscibe-email" type="email" placeholder="Ваш e-mail" required>
+          <label for="subscibe-email">Ваш e-mail</label>
+          <button class="btn">Подписаться</button>
         </form>
       </div>
-      
-    </section>
-    <!-- /.add -->
-  </main>
-  <!-- /.content -->
-</div>
-<!-- /.container for page -->
+    </div>
+  </section>
+  <!-- /.capability -->
+</main>
+<!-- /.content -->
 
 <footer class="footer">
   <div class="container">
-  
+    <div class="foo-navigations">
+      <div class="foo-nav">
+        <h5 class="foo-nav-title">Основные ссылки</h5>
+        <ul class="foo-nav-list">
+          <li class="foo-nav-list__item"><a href="#">Главная</a></li>
+          <li class="foo-nav-list__item"><a href="#">Наши проекты</a></li>
+          <li class="foo-nav-list__item"><a href="#">Наши услуги</a></li>
+          <li class="foo-nav-list__item"><a href="#">Контакты</a></li>
+        </ul>
+      </div>
+      <div class="foo-nav">
+        <h5 class="foo-nav-title">Основные ссылки</h5>
+        <ul class="foo-nav-list">
+          <li class="foo-nav-list__item"><a href="#">Главная</a></li>
+          <li class="foo-nav-list__item"><a href="#">Наши проекты</a></li>
+          <li class="foo-nav-list__item"><a href="#">Наши услуги</a></li>
+          <li class="foo-nav-list__item"><a href="#">Контакты</a></li>
+        </ul>
+      </div>
+      <div class="foo-nav">
+        <h5 class="foo-nav-title">Наши проекты</h5>
+        <ul class="foo-nav-list">
+          <li class="foo-nav-list__item"><a href="#">РосНано</a></li>
+          <li class="foo-nav-list__item"><a href="#">Сколково</a></li>
+          <li class="foo-nav-list__item"><a href="#">Проект “Восток”</a></li>
+          <li class="foo-nav-list__item"><a href="#">ТЭЦ Калининграда</a></li>
+        </ul>
+      </div>
+      <div class="foo-nav">
+        <h5 class="foo-nav-title">Социальные сети</h5>
+        <ul class="foo-nav-list">
+          <li class="foo-nav-list__item"><a href="#">VK.com</a></li>
+          <li class="foo-nav-list__item"><a href="#">Instagram</a></li>
+          <li class="foo-nav-list__item"><a href="#">Facebook</a></li>
+          <li class="foo-nav-list__item"><a href="#">Twitter</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="copyright">
+      (с) <script>var mdate = new Date(); document.write(mdate.getFullYear());</script>. Все права защищены.
+    </div>
   </div>
 </footer>
 <!-- /.footer -->

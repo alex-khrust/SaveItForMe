@@ -9,6 +9,10 @@ header
   .container
     align-items: center
     justify-content: space-between
+    position: relative
+    @media (min-width: 1200px)
+      max-width: 100%
+      padding: 0 40px
   .logo
     a
       height: 32px
@@ -70,9 +74,16 @@ header
   .lang
     min-width: 53px
     a
-      font: bold 12px $montserrat
+      font: 500 13px $rubik
+      display: none
       &.active
+        display: flex
+        align-items: center
+        justify-content: center
         color: $green !important
+        border: 2px solid $green
+        border-radius: 5px
+        padding: 7px 13px
       @media (max-width: 992px)
         font-size: 10px
     @media (max-width: 576px)
@@ -151,3 +162,31 @@ header
       font: 500 10px $rubik
       line-height: 12px
       transition: .3s
+
+  .registration
+    width: auto
+    height: 100%
+    display: flex
+    align-items: center
+    button
+      display: flex
+      align-items: center
+      justify-content: center
+      font: 500 18px $rubik
+      outline: none
+      border: none
+      padding: 15px 30px
+      margin-left: 5px
+      @media (max-width: 768px)
+        font-size: 16px
+        padding: 10px 20px
+      @media (max-width: 576px)
+        font-size: 15px
+        padding: 7px 15px
+    .log-in
+      color: var(--text-color)
+      background: none
+    .register
+      color: $white
+      background: $green
+      border-radius: 5px

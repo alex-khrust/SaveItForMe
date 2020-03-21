@@ -1,0 +1,59 @@
+.hero
+  margin-top: 45px
+  .container
+    flex-flow: wrap
+    overflow: visible
+
+.hero-description
+  max-width: 640px
+  margin-top: 165px
+  &__title
+    display: flex
+    font: bold 24px $rubik
+    line-height: 50px
+    margin-bottom: 25px
+    h1
+      color: var(--text-color)
+      margin: 0
+      &:before
+        content: 'SaveItForMe'
+        color: $green
+        margin-right: 10px
+  p
+    font: normal 18px $rubik
+    color: $lightgrey
+    line-height: 185.9%
+    margin-bottom: 38px
+
+  .btns
+    display: flex
+    align-items: center
+    .btn
+      width: 203px
+      height: 60px
+      display: flex
+      align-items: center
+      justify-content: center
+      padding: 0
+      margin-right: 20px
+      &:last-child
+        margin-right: 0
+
+.hero
+  .notes
+    max-width: 478px
+    overflow: visible
+    &-list
+      flex-flow: wrap !important
+      &__item
+        margin-bottom: 30px
+        &:first-child
+          margin-left: 100px
+        &:nth-child(2)
+          margin-left: 150px
+        a
+          cursor: text
+          &:hover
+            color: unset !important
+        label
+          cursor: unset

@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+  
+  <meta charset="utf-8">
+  <title>SaveItForMe</title>
+  <meta name="description" content="SaveItForMe">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="">
+  <meta property="og:site_name" content="SaveItForMe">
+  <meta property="og:title" content="SaveItForMe">
+  <meta property="og:image" content="img/dest/preview.jpg">
+  
+  <link rel="icon" href="images/favicon.png">
+  
+  <link rel="stylesheet" href="css/app.min.css">
+
+</head>
+<body>
+<header class="header">
+  <div class="container">
+    <div class="logo">
+      <a href="index.html">
+        SaveIt<span>ForMe</span>
+      </a>
+    </div>
+    <button class="navBurger" role="navigation" id="navToggle">
+      <span class="navBurger-line"></span>
+    </button>
+    <input type="search" class="header-search" name="header-search" id="header-search" placeholder="Поиск по сайту">
+    
+    <button class="[ toggle-button ] [ js-mode-toggle ] toggle-button__icon" aria-hidden="true"></button>
+  
+    <div class="lang">
+      <a class="active" id="ru" href="#">Рус</a>
+      <a id="eng" href="#">Eng</a>
+    </div>
+    <a class="notification" href="#">
+      <span id="ntfctn-total">5</span>
+    </a>
+    <a class="cabinet-link" href="#">
+      <img src="images/dest/user.png" alt="Фото пользователя" class="user-photo">
+      <div class="text">
+        <p class="user-name">Илья Яцеленко</p>
+        <p class="subtitle">Личный кабинет</p>
+      </div>
+    </a>
+  </div>
+</header>
+<!-- /.header -->
+
+<div class="container">
+  <aside class="sidebar">
+    <nav class="nav">
+      <ul id="accordion" class="accordion">
+        <li class="link active">
+          <a href="#">Documents</a>
+        </li>
+        <li class="dropdawn-submenu">
+          <span>Discover</span>
+          <ul class="submenu">
+            <li><a href="#">Link</a></li>
+            <li><a href="#">Link</a></li>
+          </ul>
+        </li>
+        <li class="dropdawn-submenu open">
+          <span>Calendar</span>
+          <ul class="submenu">
+            <li><a href="#">Link</a></li>
+            <li class="active"><a href="#">Link</a></li>
+          </ul>
+        </li>
+        <li class="dropdawn-submenu">
+          <span>Setting</span>
+          <ul class="submenu">
+            <li><a href="#">Link</a></li>
+            <li><a href="#">Link</a></li>
+          </ul>
+        </li>
+      </ul>
+    </nav>
+    <a href="#" class="btn">Sign Out</a>
+  </aside>
+  <!-- /.sidebar -->
+  
+  <main class="content">
+    <section class="tabs-notes">
+      <div class="tabs">
+        <ul class="tabs__list">
+          <li class="active"><a href="#">Все</a></li>
+          <li><a href="#">Личное</a></li>
+          <li><a href="#">Фильмы</a></li>
+          <li><a href="#">Посмотреть</a></li>
+          <li><a href="#">Все</a></li>
+          <li><a href="#">Все</a></li>
+        </ul>
+      </div>
+      <!-- /.tabs -->
+      <div class="tabs-content">
+        <div class="notes">
+          <ul class="notes-list">
+            <li class="notes-list__item">
+              <h3 class="title">Посмотреть сериал “Каратель” когда выйдет на Mediateka</h3>
+              <div class="hashtag-list">
+                <a href="#" class="hashtag-list__link quickly">Срочно</a>
+                <a href="#" class="hashtag-list__link hobby">#hobby</a>
+                <a href="#" class="hashtag-list__link serials">#serials</a>
+              </div>
+              <div class="remember">
+                <span class="remember__time">19:20</span>
+                <span class="remember__date">Сегодня</span>
+                <div class="remember__confirmation">
+                  <input id="remember__confirmation-chbx--1" type="checkbox">
+                  <label for="remember__confirmation-chbx--1"></label>
+                </div>
+              </div>
+            </li>
+            <li class="notes-list__item">
+              <h3 class="title">Посмотреть сериал “Каратель” когда выйдет на Mediateka</h3>
+              <div class="hashtag-list">
+                <a href="#" class="hashtag-list__link quickly">Срочно</a>
+                <a href="#" class="hashtag-list__link hobby">#hobby</a>
+                <a href="#" class="hashtag-list__link serials">#serials</a>
+              </div>
+              <div class="remember">
+                <span class="remember__time">19:20</span>
+                <span class="remember__date">Сегодня</span>
+                <div class="remember__confirmation">
+                  <input id="remember__confirmation-chbx--2" type="checkbox">
+                  <label for="remember__confirmation-chbx--2"></label>
+                </div>
+              </div>
+            </li>
+            <li class="notes-list__item">
+              <h3 class="title">Посмотреть сериал “Каратель” <a href="#" class="hashtag-list__link quickly">Срочно</a> когда выйдет на <a href="#" class="hashtag-list__link hobby">#hobby</a> Mediateka</h3>
+              <div class="hashtag-list">
+                <a href="#" class="hashtag-list__link serials">#serials</a>
+              </div>
+              <div class="remember">
+                <span class="remember__time">19:20</span>
+                <span class="remember__date">Сегодня</span>
+                <div class="remember__confirmation">
+                  <input id="remember__confirmation-chbx--3" type="checkbox">
+                  <label for="remember__confirmation-chbx--3"></label>
+                </div>
+              </div>
+            </li>
+            <li class="notes-list__item">
+              <h3 class="title">Пересадить пальму</h3>
+              <div class="picture">
+                <img src="images/dest/palm.png" alt="Пальма">
+              </div>
+              <div class="hashtag-list">
+                <a href="#" class="hashtag-list__link quickly">Срочно</a>
+                <a href="#" class="hashtag-list__link hobby">#hobby</a>
+                <a href="#" class="hashtag-list__link serials">#serials</a>
+              </div>
+              <div class="remember">
+                <span class="remember__time">19:20</span>
+                <span class="remember__date">Сегодня</span>
+                <div class="remember__confirmation">
+                  <input id="remember__confirmation-chbx--4" type="checkbox">
+                  <label for="remember__confirmation-chbx--4"></label>
+                </div>
+              </div>
+            </li>
+          </ul>
+        </div>
+        <!-- /.notes -->
+      </div>
+      <!-- /.tabs-content -->
+    </section>
+    <!-- /.tabs-notes -->
+    <section class="add">
+      <div class="description">
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec
+          hendrerit ac nisl quis tincidunt. Sed a ante enim. Ut feugiat dapib
+          us pretium. Integer sagittis lectus eget odio dapibus, eu viverra
+          eros faucibus. Fusce eleifend id lorem vitae dapibus. Curabitur at
+          gravida arcu. Ut tellus lorem, lobortis a nisl eget,accumsan pellen
+          tesque libero. Donec et est ut tellus hendrerit maximus.</p>
+      </div>
+      <div class="note-save">
+        <form action="" id="new-note-form" method="post">
+          <textarea name="" id="" placeholder="Начни вводить свой текст . . ."></textarea>
+          <div class="btns">
+            <button class="emoji-add" id="emoji"></button>
+            <div class="file-add">
+              <input id="file-add" type="file">
+              <label for="file-add"></label>
+            </div>
+            <button class="send-btn" id="send-btn" type="submit" form="new-note-form"></button>
+          </div>
+        </form>
+      </div>
+      
+    </section>
+    <!-- /.add -->
+  </main>
+  <!-- /.content -->
+</div>
+<!-- /.container for page -->
+
+<!--scripts --------------------->
+<script src="js/app.min.js"></script>
+
+</body>
+</html>

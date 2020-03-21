@@ -8,14 +8,14 @@ document.addEventListener("DOMContentLoaded", function() {
   
   $("#navToggle").click(function () {
     $(".navBurger-line").toggleClass("active");
-    $(".sidebar").toggleClass("open");
+    $(".sidebar , .menu").toggleClass("open");
     $("main").toggleClass("blur").css({"transition":".3s"});
     if (windowWidth < wsize) $("body").toggleClass("locked");
     else $("body").removeClass("locked");
   });
   $("main , .sidebar a").click(function () {
     $(".navBurger-line").removeClass("active");
-    $(".sidebar").removeClass("open");
+    $(".sidebar , .menu").removeClass("open");
     $("main").removeClass("blur");
     $("body").removeClass("locked");
   });
@@ -50,46 +50,6 @@ document.addEventListener("DOMContentLoaded", function() {
     });
   });
   //---------------------------------------------------------------------------
-  // jQuery Sliding Line -----------------------------------------
-  //var
-  var $nav = $('.tabs__list'),
-    $line = $('<li class="active-underline">').appendTo($nav),
-    $activeLi,
-    lineWidth,
-    liPos;
-  
-  function refresh() {
-    $activeLi = $nav.find('li.active');
-    lineWidth = $activeLi.outerWidth();
-    liPos = $activeLi.position().left;
-  }
-  refresh();
-  
-  $nav.css('position','relative');
-  
-  //line setup
-  function lineSet() {
-    $line.css({
-      'position':'absolute',
-      'bottom':'-3px',
-      'height':'4px',
-      'background-color':'#0ec92d',
-      'border-radius': '4px',
-    }).animate({
-      'left':liPos,
-      'width':lineWidth
-    }, 300);
-  }
-  lineSet();
-  
-  //on click
-  $nav.find('li').on('click', function() {
-    $activeLi.removeClass('active');
-    $(this).addClass('active');
-    refresh();
-    lineSet();
-  });
-  //---------------------------------------------------------------------
   // Remove the no JS class so that the button will show
   document.documentElement.classList.remove('no-js');
   
@@ -178,8 +138,62 @@ document.addEventListener("DOMContentLoaded", function() {
   
   applySetting();
   //---------------------------------------------------------------------------
+  // jQuery Sliding Line -----------------------------------------
+  //var
+  var $nav = $('.tabs__list'),
+    $line = $('<li class="active-underline">').appendTo($nav),
+    $activeLi,
+    lineWidth,
+    liPos;
+  
+  function refresh() {
+    $activeLi = $nav.find('li.active');
+    lineWidth = $activeLi.outerWidth();
+    liPos = $activeLi.position().left;
+  }
+  refresh();
+  
+  $nav.css('position','relative');
+  
+  //line setup
+  function lineSet() {
+    $line.css({
+      'position':'absolute',
+      'bottom':'-3px',
+      'height':'4px',
+      'background-color':'#0ec92d',
+      'border-radius': '4px',
+    }).animate({
+      'left':liPos,
+      'width':lineWidth
+    }, 300);
+  }
+  lineSet();
+  
+  //on click
+  $nav.find('li').on('click', function() {
+    $activeLi.removeClass('active');
+    $(this).addClass('active');
+    refresh();
+    lineSet();
+  });
+  //---------------------------------------------------------------------
   
 });
 
 
 
+$(document).ready(function () {
+  //initialize swiper when document ready
+  var mySwiper = new Swiper ('.demo-slider', {
+    // Optional parameters
+    direction: 'horizontal',
+    loop: true,
+    // autoHeight: true, //enable auto height
+    centeredSlides: true,
+    autoplay: {
+      delay: 5000,
+      // disableOnInteraction: true,
+    },
+  })
+});
