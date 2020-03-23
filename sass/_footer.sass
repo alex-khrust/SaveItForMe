@@ -13,8 +13,9 @@
   height: auto
   display: flex
   flex-flow: wrap
-  align-items: center
   justify-content: space-evenly
+  //@media (max-width: 768px)
+  //  justify-content: space-between
 
 .foo-nav
   width: auto
@@ -22,10 +23,13 @@
   max-width: 245px
   display: flex
   flex-flow: column
+  margin-bottom: 25px
 
   &-title
     font: bold 18px $rubik
     margin-bottom: 35px
+    @media (max-width: 768px)
+      margin-bottom: 21px
 
   &-list
     width: 100%
@@ -38,7 +42,7 @@
       width: 100%
       height: auto
       display: flex
-      margin-bottom: 20px
+      margin-bottom: 25px
       &:last-child
         margin-bottom: 0
       a
@@ -73,4 +77,8 @@
   font: 600 13px $rubik
   color: $grey
   border-top: 1px solid $lightgrey
-  margin-top: 65px
+  margin-top: 40px
+  @media (max-width: 768px)
+    height: 50px
+    margin-top: 5px
+    font-size: 12px

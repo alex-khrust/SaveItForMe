@@ -189,6 +189,7 @@ $(document).ready(function () {
     // Optional parameters
     direction: 'horizontal',
     loop: true,
+    spaceBetween: 30,
     // autoHeight: true, //enable auto height
     centeredSlides: true,
     autoplay: {
