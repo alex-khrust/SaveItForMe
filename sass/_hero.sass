@@ -44,8 +44,10 @@
   p
     font: normal 18px $rubik
     color: $lightgrey
-    line-height: 185.9%
+    line-height: 165.9%
     margin-bottom: 38px
+    @media (max-width: 1080px)
+      font-size: 16px
 
   .btns
     display: flex
@@ -145,6 +147,6 @@
         a
           cursor: text
           &:hover
-            color: unset !important
+            color: $textcolor !important
         label
           cursor: unset

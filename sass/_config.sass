@@ -71,6 +71,7 @@ input, textarea
     border-color: green
 
 a, button, .btn
+  transition: .3s
   outline: none
   -webkit-tap-highlight-color: transparent
   &:focus
@@ -78,10 +79,10 @@ a, button, .btn
 
 a
   color: $textcolor
-  transition: .3s
   &:hover
     text-decoration: none
-    color: $green !important
+    color: $green
+
 
 .active a
   color: $green !important
@@ -153,19 +154,24 @@ section
   padding: 20px 55px
   &:hover
     color: $white
+    box-shadow: 0 12px 20px 0 var(--btn-hover)
   @media (max-width: 1200px)
     padding: 11px 25px
     font-size: 12px
 
+//a.btn
+//  &:hover
+//    color: $white
+
 .btn-transparent
-  color: $green
+  color: $green !important
   background: none
   border: 2px solid $green
 
 @media (max-width: 768px)
   .blur
     filter: blur(5px)
-    transition: .3s ease
+    transition: .1s ease
 
 // Custom scrollbar
 /* width */

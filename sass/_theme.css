@@ -44,6 +44,8 @@
   --button-icon-filter: var(--icon-moon-filter);
   --button-background: var(--color-dark);
   --button-color: var(--color-light);
+  --btn-hover: rgba(0,0,0,0.35);
+  --btn-hover-dark: rgba(158, 158, 158, 0.7);
   /*--border-color: var(--color-dark-alpha);*/
 }
 
@@ -87,6 +89,7 @@ body {
   --emoji: var(--emoji-dark);
   --file: var(--file-dark);
   --send: var(--send-dark);
+  --btn-hover: var(--btn-hover-dark);
 }
 
 /* Remove _all_ animations and transitions for people that prefer not to see them */
@@ -168,6 +171,7 @@ body {
   transition: 500ms ease-in-out, color 200ms ease;
 }
 
+.hero-description__title h1,
 input,
 .note-save textarea,
 .note-save textarea::placeholder {
@@ -183,7 +187,7 @@ header a,
 .logo a,
 .lang,
 .cabinet-link .text p,
-.sidenav .accordion>li>a {
+.nav .accordion>li>a {
   color: var(--text-color) !important;
   transition: color 700ms ease;
 }
@@ -225,4 +229,8 @@ header a,
 .note-save .send-btn {
   background: var(--send);
   transition: 500ms ease;
+}
+
+.btn:hover {
+  box-shadow: 0 12px 20px 0 var(--btn-hover);
 }

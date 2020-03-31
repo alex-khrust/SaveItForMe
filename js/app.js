@@ -20,10 +20,18 @@ document.addEventListener("DOMContentLoaded", function() {
     $("body").removeClass("locked");
   });
   
-  $(window).resize(function () {
-    if (windowWidth < wsize) $("body.locked");
-    else $("body").removeClass("locked");
-  });
+  function close (){
+    $(".navBurger-line").removeClass("active");
+    $(".sidebar , .menu").removeClass("open");
+    $("main").removeClass("blur");
+    $("body").removeClass("locked");
+  }
+  close();
+  
+  // $(window).resize(function () {
+  //   var windowWidth = $(window).width();
+  //   if (windowWidth > wsize) close();
+  // });
   
   //---------------------------------------------------------------------------
   //------------ Accordion submenu -----------
@@ -50,6 +58,82 @@ document.addEventListener("DOMContentLoaded", function() {
     });
   });
   //---------------------------------------------------------------------------
+  //initialize swiper when document ready
+  var mySwiper = new Swiper ('.demo-slider', {
+    // Optional parameters
+    direction: 'horizontal',
+    loop: true,
+    spaceBetween: 30,
+    // autoHeight: true, //enable auto height
+    centeredSlides: true,
+    speed: 1000,
+    autoplay: {
+      delay: 3000,
+      // disableOnInteraction: true,
+    },
+  });
+  
+  // jQuery Sliding Line -----------------------------------------
+  //var
+  var $nav = $('.tabs__list'),
+    $line = $('<li class="active-underline">').appendTo($nav),
+    $activeLi,
+    lineWidth,
+    liPos;
+  
+  function refresh() {
+    $activeLi = $nav.find('li.active');
+    lineWidth = $activeLi.outerWidth();
+    liPos = $activeLi.position().left;
+  }
+  refresh();
+  
+  $nav.css('position','relative');
+  
+  //line setup
+  function lineSet() {
+    $line.css({
+      'position':'absolute',
+      'bottom':'-3px',
+      'height':'4px',
+      'background-color':'#0ec92d',
+      'border-radius': '4px',
+    }).animate({
+      'left':liPos,
+      'width':lineWidth
+    }, 300);
+  }
+  lineSet();
+  
+  //on click
+  $nav.find('li').on('click', function() {
+    $activeLi.removeClass('active');
+    $(this).addClass('active');
+    refresh();
+    lineSet();
+  });
+  //---------------------------------------------------------------------
+  // Fancybox ---------------------------------
+  // $('.notes-list__item').on('click', function() {
+  //   $.fancybox.open( $(this), {
+  //     // infobar: false,
+  //     zoom: false,
+  //     closeExisting: false,
+  //     type : 'inline',
+  //     smallBtn: "false",
+  //     toolbar: "auto",
+  //     buttons : [
+  //       'close'
+  //     ],
+  //   });
+  // });
+  //---------------------------------------------------------------------
+  
+});
+
+//----------------------------------------------------------------------------
+// ------- Тёмня и светлые темы -------------------------------------
+document.addEventListener("DOMContentLoaded", function() {
   // Remove the no JS class so that the button will show
   document.documentElement.classList.remove('no-js');
   
@@ -92,7 +176,7 @@ document.addEventListener("DOMContentLoaded", function() {
     else {
       setButtonLabelAndStatus(getCSSCustomProp(COLOR_MODE_KEY));
     }
-  }
+  };
   
   /**
    * Get’s the current setting > reverses it > stores it
@@ -116,7 +200,7 @@ document.addEventListener("DOMContentLoaded", function() {
     localStorage.setItem(STORAGE_KEY, currentSetting);
     
     return currentSetting;
-  }
+  };
   
   /**
    * A shared method for setting the button text label and visually hidden status element
@@ -124,7 +208,7 @@ document.addEventListener("DOMContentLoaded", function() {
   const setButtonLabelAndStatus = currentSetting => {
     modeToggleText.innerText = `Enable ${currentSetting === 'dark' ? 'light' : 'dark'} mode`;
     modeStatusElement.innerText = `Color mode is now "${currentSetting}"`;
-  }
+  };
   
   /**
    * Clicking the button runs the apply setting method which grabs its parameter
@@ -137,64 +221,8 @@ document.addEventListener("DOMContentLoaded", function() {
   });
   
   applySetting();
-  //---------------------------------------------------------------------------
-  // jQuery Sliding Line -----------------------------------------
-  //var
-  var $nav = $('.tabs__list'),
-    $line = $('<li class="active-underline">').appendTo($nav),
-    $activeLi,
-    lineWidth,
-    liPos;
-  
-  function refresh() {
-    $activeLi = $nav.find('li.active');
-    lineWidth = $activeLi.outerWidth();
-    liPos = $activeLi.position().left;
-  }
-  refresh();
-  
-  $nav.css('position','relative');
-  
-  //line setup
-  function lineSet() {
-    $line.css({
-      'position':'absolute',
-      'bottom':'-3px',
-      'height':'4px',
-      'background-color':'#0ec92d',
-      'border-radius': '4px',
-    }).animate({
-      'left':liPos,
-      'width':lineWidth
-    }, 300);
-  }
-  lineSet();
-  
-  //on click
-  $nav.find('li').on('click', function() {
-    $activeLi.removeClass('active');
-    $(this).addClass('active');
-    refresh();
-    lineSet();
-  });
-  //---------------------------------------------------------------------
-  
 });
 
 
 
-$(document).ready(function () {
-  //initialize swiper when document ready
-  var mySwiper = new Swiper ('.demo-slider', {
-    // Optional parameters
-    direction: 'horizontal',
-    loop: true,
-    spaceBetween: 30,
-    // autoHeight: true, //enable auto height
-    centeredSlides: true,
-    autoplay: {
-      delay: 5000,
-      // disableOnInteraction: true,
-    },
-  })
-});
+
