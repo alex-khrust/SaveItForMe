@@ -59,60 +59,59 @@
       line-height: 28px
 
   .hashtag-list__link
-    margin: 0 5px
     color: $textcolor
 
+  &>a,
   .picture
     width: 100%
     height: auto
     margin-bottom: 22px
-    img
-      width: 100%
-      height: auto
-      @media (max-width: 768px)
-        max-height: 55px
-        width: auto
-        margin-right: 8px
-        &:last-child
-          margin-right: 0
+  img
+    width: 100%
+    height: auto
+    @media (max-width: 768px)
+      max-height: 55px
+      width: auto
+      margin-right: 8px
+      &:last-child
+        margin-right: 0
 
 .fancybox-content
   .notes-list__item
+    &>a,
     .picture
       width: 100%
       height: auto
       margin-bottom: 22px
-      img
+    img
+      width: 100%
+      height: auto
+      @media (max-width: 768px)
         width: 100%
         height: auto
-        @media (max-width: 768px)
-          width: 100%
-          height: auto
-          max-height: initial
-          margin-right: 0
+        max-height: initial
+        margin-right: 0
 
 
-.hashtag-list
+.hashtag-list, .list-item
   width: 100%
   height: auto
   display: flex
   align-items: center
   justify-content: flex-start
   flex-flow: wrap
-  &__link
+  &__link, a, .item
     font: bold 10px $montserrat
     line-height: 12px
     color: $textcolor
     border-radius: 6px
     padding: 9px 13px
-
-  .hashtag-list__link
     margin: 0 8px 8px 0
 
 
-.quickly
+.quickly, .category, .list-item .item
   background: #B2F5FF
-.hobby
+.hobby, .hashtag
   background: #B4FFA2
 .serials
   background: #FACAA6
