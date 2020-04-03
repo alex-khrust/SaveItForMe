@@ -56,8 +56,10 @@
 .xdsoft_datetimepicker.xdsoft_inline {
     display: inline-block;
     position: absolute;
-    box-shadow: none
-
+    box-shadow: none;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
 }
 
 .xdsoft_datetimepicker * {
