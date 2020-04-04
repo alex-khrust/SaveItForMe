@@ -118,6 +118,7 @@
 
 .box-show-tag {
 	width: 100%;
+	height: auto;
 	min-height: 100px;
 	display: flex;
 	justify-content: flex-start;
@@ -274,4 +275,55 @@
 	.navBurger{
 		display: none !important;
 	}
+}
+
+
+#taskInput {
+	width: 100%;
+	height: 33px;
+	margin-bottom: 22px;
+	border: 2px solid #0ec92d;
+	border-radius: 5px;
+}
+#taskInput .buttonInside {
+	width: 100%;
+	height: 100%;
+	display: flex;
+	align-items: center;
+}
+#taskInput input {
+	width: 100%;
+	height: 100%;
+	font: 500 15px Rubik,sans-serif;
+	line-height: 15px;
+	letter-spacing: .02em;
+	background: none;
+	color: #0ec92d!important;
+	border: none;
+	border-right: 2px solid #0ec92d;
+	/*border-radius: 5px 0 0 5px;*/
+	padding: 7px 13px;
+}
+#taskInput button {
+	width: auto;
+	height: 100%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	font: 500 15px Rubik,sans-serif;
+	line-height: 15px;
+	letter-spacing: .02em;
+	background: #0ec92d;
+	/*color: #0ec92d!important;*/
+	border: 2px solid #0ec92d;
+	padding: 0 14px;
+}
+#taskInput button:hover {
+	background: none;
+	color: #0ec92d;
+	border-color: var(--background-notes-border);
+}
+#taskInput button:last-child {
+	/*border-radius: 0 5px 5px 0;*/
+	border-left: 2px solid var(--background-notes-border);
 }

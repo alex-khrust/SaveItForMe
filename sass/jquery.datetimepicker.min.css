@@ -203,7 +203,8 @@
     cursor: pointer;
     border-bottom-width: 0;
     height: 25px;
-    line-height: 25px
+    line-height: 25px;
+    transition: 500ms ease-in-out;
 }
 
 .xdsoft_datetimepicker .xdsoft_timepicker .xdsoft_time_box>div>div:first-child {
@@ -314,7 +315,8 @@
     padding: 0;
     border-collapse: collapse;
     cursor: pointer;
-    height: 25px
+    height: 25px;
+    transition: 500ms ease-in-out;
 }
 
 .xdsoft_datetimepicker.xdsoft_showweeks .xdsoft_calendar td,.xdsoft_datetimepicker.xdsoft_showweeks .xdsoft_calendar th {
