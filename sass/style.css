@@ -313,6 +313,7 @@
 	font: 500 15px Rubik,sans-serif;
 	line-height: 15px;
 	letter-spacing: .02em;
+	color: var(--background-notes);
 	background: #0ec92d;
 	/*color: #0ec92d!important;*/
 	border: 2px solid #0ec92d;
