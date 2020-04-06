@@ -79,14 +79,20 @@
     button, label
       width: 30px
       height: 30px
+      display: flex
+      align-items: center
+      justify-content: center
       cursor: pointer
       background-color: unset
+      border-radius: 50%
       border: none
     button, .file-add
       margin-left: 10px
 
   .emoji-add
     background: url(../images/dest/emoji.svg) no-repeat
+    &:hover
+      background: $green url(../images/dest/emoji.svg) no-repeat
 
   .file-add
     width: 30px
@@ -95,6 +101,10 @@
       display: none
     label
       background: url(../images/dest/file.svg) no-repeat
+      &:hover
+        background: $green url(../images/dest/file.svg) no-repeat
 
   .send-btn
     background: url(../images/dest/send.svg) no-repeat
+    &:hover
+      background: $green url(../images/dest/send.svg) no-repeat

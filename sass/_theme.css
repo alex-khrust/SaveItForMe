@@ -46,6 +46,7 @@
   --file-dark: url(../images/dest/file-dark.svg) no-repeat;
   --send: url(../images/dest/send.svg) no-repeat;
   --send-dark: url(../images/dest/send-dark.svg) no-repeat;
+  --background-enter: var(--background);
 }
 
 body {
@@ -89,6 +90,7 @@ body {
   --file: var(--file-dark);
   --send: var(--send-dark);
   --btn-hover: var(--btn-hover-dark);
+  --background-enter: var(--color-dark);
 }
 
 [data-user-color-scheme="dark"] {

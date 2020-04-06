@@ -33,6 +33,37 @@ document.addEventListener("DOMContentLoaded", function() {
   //   if (windowWidth > wsize) close();
   // });
   
+  //---------------------------------------------------------------
+  var popup = $(".form-enter");
+  $(".log-in").click (function () {
+    $('.tab-content > div').siblings().hide();
+    $(".login-modal, #login").fadeIn(150).show();
+    $('.tab:nth-child(2)').addClass('active').siblings().removeClass('active');
+    $('body').css('overflow', 'hidden');
+    $('header, section, aside, footer').css({
+      "filter": "blur(3px)"
+    });
+  });
+
+  $(".register").click (function () {
+    $('.tab-content > div').siblings().hide();
+    $(".login-modal, #signup").fadeIn(150).show();
+    $('.tab:nth-child(1)').addClass('active').siblings().removeClass('active');
+    $('body').css('overflow', 'hidden');
+    $('header, section, aside, footer').css({
+      "filter": "blur(3px)"
+    });
+  });
+
+  $(".login-modal").mouseup(function (e){
+    if (!popup.is(e.target)
+      && popup.has(e.target).length === 0) {
+      $(".login-modal").hide().fadeOut(300);
+      $('header, section, aside, footer').css({
+        "filter": "blur(0)"
+      });
+    }
+  });
   //---------------------------------------------------------------------------
   //------------ Accordion submenu -----------
   $(function() {
@@ -75,43 +106,49 @@ document.addEventListener("DOMContentLoaded", function() {
   
   // jQuery Sliding Line -----------------------------------------
   //var
-  var $nav = $('.tabs__list'),
-    $line = $('<li class="active-underline">').appendTo($nav),
-    $activeLi,
-    lineWidth,
-    liPos;
-  
-  function refresh() {
-    $activeLi = $nav.find('li.active');
-    lineWidth = $activeLi.outerWidth();
-    liPos = $activeLi.position().left;
+  function f() {
+    if ( $('section').hasClass('tabs-notes') ) {
+      var $nav = $('.tabs__list'),
+        $line = $('<li class="active-underline">').appendTo($nav),
+        $activeLi,
+        lineWidth,
+        liPos;
+    
+      function refresh() {
+        $activeLi = $nav.find('li.active');
+        lineWidth = $activeLi.outerWidth();
+        liPos = $activeLi.position().left;
+      }
+      refresh();
+    
+      $nav.css('position','relative');
+    
+      //line setup
+      function lineSet() {
+        $line.css({
+          'position':'absolute',
+          'bottom':'-3px',
+          'height':'4px',
+          'background-color':'#0ec92d',
+          'border-radius': '4px',
+        }).animate({
+          'left':liPos,
+          'width':lineWidth
+        }, 300);
+      }
+      lineSet();
+    
+      //on click
+      $nav.find('li').on('click', function() {
+        $activeLi.removeClass('active');
+        $(this).addClass('active');
+        refresh();
+        lineSet();
+      });
+    }
   }
-  refresh();
+  f();
   
-  $nav.css('position','relative');
-  
-  //line setup
-  function lineSet() {
-    $line.css({
-      'position':'absolute',
-      'bottom':'-3px',
-      'height':'4px',
-      'background-color':'#0ec92d',
-      'border-radius': '4px',
-    }).animate({
-      'left':liPos,
-      'width':lineWidth
-    }, 300);
-  }
-  lineSet();
-  
-  //on click
-  $nav.find('li').on('click', function() {
-    $activeLi.removeClass('active');
-    $(this).addClass('active');
-    refresh();
-    lineSet();
-  });
   //---------------------------------------------------------------------
   // Fancybox ---------------------------------
   // $('.notes-list__item').on('click', function() {
@@ -129,6 +166,53 @@ document.addEventListener("DOMContentLoaded", function() {
   // });
   //---------------------------------------------------------------------
   
+  $('.form-enter').find('input, textarea').on('keyup blur focus', function (e) {
+    
+    var $this = $(this),
+      label = $this.prev('label');
+    
+    if (e.type === 'keyup') {
+      if ($this.val() === '') {
+        label.removeClass('active highlight');
+      } else {
+        label.addClass('active highlight');
+      }
+    } else if (e.type === 'blur') {
+      if( $this.val() === '' ) {
+        label.removeClass('active highlight');
+      } else {
+        label.removeClass('highlight');
+      }
+    } else if (e.type === 'focus') {
+      
+      if( $this.val() === '' ) {
+        label.removeClass('highlight');
+      }
+      else if( $this.val() !== '' ) {
+        label.addClass('highlight');
+      }
+    }
+    
+  });
+  
+  $('.tab a').on('click', function (e) {
+    
+    e.preventDefault();
+    
+    $(this).parent().addClass('active');
+    $(this).parent().siblings().removeClass('active');
+    
+    target = $(this).attr('href');
+    
+    $('.tab-content > div').not(target).hide();
+    
+    $(target).fadeIn(600);
+    
+  });
+  
+  
+  
+  //--------------------------------------------------------------
 });
 
 //----------------------------------------------------------------------------
@@ -171,10 +255,10 @@ document.addEventListener("DOMContentLoaded", function() {
     
     if(currentSetting) {
       document.documentElement.setAttribute('data-user-color-scheme', currentSetting);
-      setButtonLabelAndStatus(currentSetting);
+      // setButtonLabelAndStatus(currentSetting);
     }
     else {
-      setButtonLabelAndStatus(getCSSCustomProp(COLOR_MODE_KEY));
+      // setButtonLabelAndStatus(getCSSCustomProp(COLOR_MODE_KEY));
     }
   };
   
@@ -205,10 +289,10 @@ document.addEventListener("DOMContentLoaded", function() {
   /**
    * A shared method for setting the button text label and visually hidden status element
    */
-  const setButtonLabelAndStatus = currentSetting => {
-    modeToggleText.innerText = `Enable ${currentSetting === 'dark' ? 'light' : 'dark'} mode`;
-    modeStatusElement.innerText = `Color mode is now "${currentSetting}"`;
-  };
+  // const setButtonLabelAndStatus = currentSetting => {
+  //   modeToggleText.innerText = `Enable ${currentSetting === 'dark' ? 'light' : 'dark'} mode`;
+  //   modeStatusElement.innerText = `Color mode is now "${currentSetting}"`;
+  // };
   
   /**
    * Clicking the button runs the apply setting method which grabs its parameter
