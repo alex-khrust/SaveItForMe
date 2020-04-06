@@ -28,6 +28,7 @@
   --btn-hover-dark: rgba(158, 158, 158, 0.7);
 
   --background-notes: #fff;
+  --background-notes-dark: #2E3238;
   --background-notes-border: rgba(229, 229, 229, 0.6);
   --background-notes-border-dark: #2E3238;
   --cabinet-link-user-photo: #060728;
@@ -46,7 +47,8 @@
   --file-dark: url(../images/dest/file-dark.svg) no-repeat;
   --send: url(../images/dest/send.svg) no-repeat;
   --send-dark: url(../images/dest/send-dark.svg) no-repeat;
-  --background-enter: var(--background);
+  --background-enter: var(--background-notes-dark);
+  --text-color-enter: #fff;
 }
 
 body {
@@ -79,7 +81,7 @@ body {
   /*--button-background: var(--color-light-alpha);*/
   /*--button-color: var(--color-dark);*/
   /*--border-color: var(--color-light-alpha);*/
-  --background-notes: #2E3238;
+  --background-notes: var(--background-notes-dark);
   --background-notes-border: var(--background-notes-border-dark);
   --cabinet-link-user-photo: var(--cabinet-link-user-photo-dark);
   --tabs: var(--tabs-dark);
@@ -90,7 +92,8 @@ body {
   --file: var(--file-dark);
   --send: var(--send-dark);
   --btn-hover: var(--btn-hover-dark);
-  --background-enter: var(--color-dark);
+  --background-enter: #F6F6F6;
+  --text-color-enter: #060728;
 }
 
 [data-user-color-scheme="dark"] {

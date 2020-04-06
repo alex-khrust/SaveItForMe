@@ -58,10 +58,10 @@ document.addEventListener("DOMContentLoaded", function() {
   $(".login-modal").mouseup(function (e){
     if (!popup.is(e.target)
       && popup.has(e.target).length === 0) {
-      $(".login-modal").hide().fadeOut(300);
       $('header, section, aside, footer').css({
         "filter": "blur(0)"
       });
+      $(".login-modal").fadeOut(300).hide();
     }
   });
   //---------------------------------------------------------------------------

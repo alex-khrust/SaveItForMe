@@ -43,7 +43,7 @@ $br: 4px;
   .form-enter {
     width: 100%;
     max-width:600px;
-    background: #2E3238;
+    background: var(--background-enter);
     padding: 40px;
     margin:0 auto;
     border-radius: 10px;
@@ -52,6 +52,7 @@ $br: 4px;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
+    overflow: auto;
   }
     @media (max-width: 600px) {
       .form-enter {
@@ -105,7 +106,7 @@ $br: 4px;
 
   h1 {
     text-align:center;
-    color:$white;
+    color:var(--text-color-enter);
     font-weight:$thin;
     margin:0 0 15px;
   }
@@ -147,7 +148,7 @@ $br: 4px;
     background:none;
     background-image:none;
     //border:1px solid $gray-light;
-    color:$white;
+    color:var(--text-color-enter);
     //border-radius:0;
     border: 2px solid #0ec92d;
     border-radius: 5px;
