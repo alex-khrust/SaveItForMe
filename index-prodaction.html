@@ -1,0 +1,412 @@
+
+<html>
+<head>
+  
+  <meta charset="utf-8">
+  <title>SaveItForMe</title>
+  <meta name="description" content="SaveItForMe">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="">
+  <meta property="og:site_name" content="SaveItForMe">
+  <meta property="og:title" content="SaveItForMe">
+  
+  <link rel="icon" href="images/favicon.png">
+  
+  
+  
+  <link rel="stylesheet" href="https://alex-khrust.github.io/SaveItForMe/css/app.min.css">
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
+  
+  
+  
+  
+  <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">-->
+
+</head>
+<body>
+<script src="/Scripts/app.min.js"></script>
+<script src="/Scripts/jquery-3.4.1.js"></script>
+<script src="/Scripts/jquery-ui.js"></script>
+<script src="/Scripts/jquery.datetimepicker.full.min.js"></script>
+
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+<script src="/Scripts/intro.min.js"></script>
+<script type="text/javascript" src="//www.gstatic.com/firebasejs/3.6.8/firebase.js"></script>
+<script type="text/javascript" src="/Scripts/firebase_subscribe.js"></script>
+<script src="/Scripts/jquery.simulate.js"></script>
+
+
+<header class="header">
+  <div class="container">
+    <div class="logo">
+      <a href="/">
+        За<span>Помни</span>
+      </a>
+    </div>
+    <button class="navBurger" role="navigation" id="navToggle">
+      <span class="navBurger-line"></span>
+    </button>
+    <button class="[ toggle-button ] [ js-mode-toggle ] toggle-button__icon" aria-hidden="true"></button>
+    
+    <div class="lang">
+      
+      <a class="active lang" data-lang="rus" id="ru" href="#">Рус</a>
+    </div>
+    <div class="registration">
+      <button class="log-in" onclick="login();">Войти</button>
+      <button class="register" onclick="signup()">Регистрация</button>
+    </div>
+  
+  </div>
+</header>
+<!-- /.header -->
+
+
+
+
+
+
+
+
+
+
+
+
+<main class="content">
+  <section class="hero">
+    <div class="container">
+      <div class="hero-description">
+        <div class="hero-description__title">
+          <span>Zapomni.com.ua</span><h1>
+          сохранит всё что ценно для вас!
+        </h1>
+        </div>
+        <p>Одно место для хранения всего. Простая навигация по хэш тегам. Напоминания.Всё это в одном месте и в одном поле!</p>
+        <div class="btns">
+          <a href="#" class="btn" onclick="signup()">Регистрация</a>
+          <a href="#" class="btn btn-transparent">Как это работает?</a>
+        </div>
+      </div>
+      <div class="notes">
+        <ul class="notes-list">
+          <li class="notes-list__item">
+            <h3 class="title">Посмотреть сериал “Каратель” когда выйдет на Mediateka</h3>
+            <div class="hashtag-list">
+              <a class="hashtag-list__link quickly">Срочно</a>
+              <a class="hashtag-list__link hobby">#hobby</a>
+              <a class="hashtag-list__link serials">#serials</a>
+            </div>
+            <div class="remember">
+              <span class="remember__time">19:20</span>
+              <span class="remember__date">Сегодня</span>
+              <div class="remember__confirmation">
+                <input id="remember__confirmation-chbx--1" type="checkbox" disabled>
+                <label for="remember__confirmation-chbx--1"></label>
+              </div>
+            </div>
+          </li>
+          <li class="notes-list__item">
+            <h3 class="title">Посмотреть сериал “Каратель” когда выйдет на Mediateka</h3>
+            <div class="hashtag-list">
+              <a class="hashtag-list__link quickly">Срочно</a>
+              <a class="hashtag-list__link hobby">#hobby</a>
+              <a class="hashtag-list__link serials">#serials</a>
+            </div>
+            <div class="remember">
+              <span class="remember__time">19:20</span>
+              <span class="remember__date">Сегодня</span>
+              <div class="remember__confirmation">
+                <input id="remember__confirmation-chbx--2" type="checkbox" disabled>
+                <label for="remember__confirmation-chbx--2"></label>
+              </div>
+            </div>
+          </li>
+          <li class="notes-list__item">
+            <h3 class="title">Посмотреть сериал “Каратель” <a class="hashtag-list__link quickly">Срочно</a> когда выйдет на <a class="hashtag-list__link hobby">#hobby</a> Mediateka</h3>
+            <div class="hashtag-list">
+              <a class="hashtag-list__link serials">#serials</a>
+            </div>
+            <div class="remember">
+              <span class="remember__time">19:20</span>
+              <span class="remember__date">Сегодня</span>
+              <div class="remember__confirmation">
+                <input id="remember__confirmation-chbx--3" type="checkbox" disabled>
+                <label for="remember__confirmation-chbx--3"></label>
+              </div>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </section>
+  <section class="info">
+    <div class="container">
+      
+      <!-- /.description -->
+      <div class="advantages">
+        <h2 class="info-title">All information in a visual form</h2>
+        <h3 class="info-subtitle">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris vitae commodo mi. Aliquam hendrerit id magna vel molestie. Aenean non consequat urna, eu laoreet erat</h3>
+        <ul class="advantages-list">
+          <li class="advantages-list__item ease">
+            <h4 class="title">Легко и просто</h4>
+            <p>Lorem ipsum dolor sit amet, con sectetur adipiscing elit. Mauris vitae commodo mi. Alinff re tre</p>
+          </li>
+          <li class="advantages-list__item everywhere">
+            <h4 class="title">На любом устройстве</h4>
+            <p>Lorem ipsum dolor sit amet, con sectetur adipiscing elit. Mauris vitae commodo mi. Alinff re tre</p>
+          </li>
+          <li class="advantages-list__item reminders">
+            <h4 class="title">Напоминания</h4>
+            <p>Lorem ipsum dolor sit amet, con sectetur adipiscing elit. Mauris vitae commodo mi. Alinff re tre</p>
+          </li>
+          <li class="advantages-list__item task">
+            <h4 class="title">Задачи</h4>
+            <p>Lorem ipsum dolor sit amet, con sectetur adipiscing elit. Mauris vitae commodo mi. Alinff re tre</p>
+          </li>
+          <li class="advantages-list__item customization">
+            <h4 class="title">Кастомизация</h4>
+            <p>Lorem ipsum dolor sit amet, con sectetur adipiscing elit. Mauris vitae commodo mi. Alinff re tre</p>
+          </li>
+          <li class="advantages-list__item free">
+            <h4 class="title">Бесплатно</h4>
+            <p>Lorem ipsum dolor sit amet, con sectetur adipiscing elit. Mauris vitae commodo mi. Alinff re tre</p>
+          </li>
+        </ul>
+      </div>
+      <!-- /.advantages -->
+    </div>
+  </section>
+  <!-- /.info -->
+  <!-- /.hero -->
+  <section class="terms">
+    <div class="container">
+      <ul class="ease">
+        <li>
+          <span>01</span>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris vitae commodo mi. Aliquam hendrerit id magna vel molestie.</p>
+        </li>
+        <li>
+          <span>02</span>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris vitae commodo mi. Aliquam hendrerit id magna vel molestie.</p>
+        </li>
+        <li>
+          <span>03</span>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris vitae commodo mi. Aliquam hendrerit id magna vel molestie.</p>
+        </li>
+      </ul>
+      <!-- /.ease -->
+      <div class="demo-slider swiper-container">
+        <ul class="demo-slider-list swiper-wrapper">
+          <li class="swiper-slide">
+            <div class="note-save">
+              <form action="#" id="form-save" method="post">
+                <textarea name="" id="" placeholder="Начни вводить свой текст . . ."></textarea>
+                <div class="btns">
+                  <button class="btn" id="send-btn" type="submit" form="form-save">Save</button>
+                </div>
+              </form>
+            </div>
+          </li>
+          <li class="swiper-slide">
+            <div class="notes">
+              <div class="notes-list__item">
+                <h3 class="title">Посмотреть сериал “Каратель” когда выйдет на Mediateka</h3>
+                <div class="hashtag-list">
+                  <a class="hashtag-list__link quickly">Срочно</a>
+                  <a class="hashtag-list__link hobby">#hobby</a>
+                  <a class="hashtag-list__link serials">#serials</a>
+                </div>
+                <div class="remember">
+                  <span class="remember__time">19:20</span>
+                  <span class="remember__date">Сегодня</span>
+                  <div class="remember__confirmation">
+                    <input id="remember__confirmation-chbx--1" type="checkbox" disabled>
+                    <label for="remember__confirmation-chbx--1"></label>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </li>
+          <li class="swiper-slide">
+            <div class="cloud-tags">
+              <img src="images/dest/words.png" alt="Теги">
+            </div>
+          </li>
+        </ul>
+      </div>
+      <!-- /.demo-slider -->
+      <ul class="tarifs">
+        <li class="tarifs__item">
+          <h4 class="tarifs-title">Бесплатно</h4>
+          <ul class="tarifs-options">
+            <li class="checked">Lorem ipsum dolor consectetur</li>
+            <li>Lorem ipsum dolor consectet</li>
+            <li>Lorem ipsum dolor csectetur</li>
+            <li>Lorem ipsum dolor consecteur</li>
+            <li>Lorem ipsum dolor consetur</li>
+          </ul>
+          <a href="#" class="btn">Start Now</a>
+        </li>
+        <li class="tarifs__item">
+          <h4 class="tarifs-title">Базовая</h4>
+          <ul class="tarifs-options">
+            <li class="checked">Lorem ipsum dolor consectetur</li>
+            <li class="checked">Lorem ipsum dolor consectet</li>
+            <li class="checked">Lorem ipsum dolor csectetur</li>
+            <li>Lorem ipsum dolor consecteur</li>
+            <li>Lorem ipsum dolor consetur</li>
+          </ul>
+          <a href="#" class="btn">Start Now</a>
+        </li>
+        <li class="tarifs__item">
+          <h4 class="tarifs-title">Стандарт</h4>
+          <ul class="tarifs-options">
+            <li class="checked">Lorem ipsum dolor consectetur</li>
+            <li class="checked">Lorem ipsum dolor consectet</li>
+            <li class="checked">Lorem ipsum dolor csectetur</li>
+            <li class="checked">Lorem ipsum dolor consecteur</li>
+            <li>Lorem ipsum dolor consetur</li>
+          </ul>
+          <a href="#" class="btn">Start Now</a>
+        </li>
+        <li class="tarifs__item">
+          <h4 class="tarifs-title">Премиум</h4>
+          <ul class="tarifs-options">
+            <li class="checked">Lorem ipsum dolor consectetur</li>
+            <li class="checked">Lorem ipsum dolor consectet</li>
+            <li class="checked">Lorem ipsum dolor csectetur</li>
+            <li class="checked">Lorem ipsum dolor consecteur</li>
+            <li class="checked">Lorem ipsum dolor consetur</li>
+          </ul>
+          <a href="#" class="btn">Start Now</a>
+        </li>
+      </ul>
+      <!-- /.tarifs -->
+    </div>
+  </section>
+  <!-- /.terms -->
+  
+  <section class="capability">
+    <div class="container">
+      <h2 class="capability-title">How can we help you</h2>
+      <ul class="capability-list">
+        <li class="capability-list__item">
+          <img src="/images/dest/it.jpg" alt="">
+          <h4 class="title">ИТшнику</h4>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris vitae commodo mi. Aliquam hendrerit id magna vel molestie. Aenean non consequat urna, eu laoreet erat. Sed egestas iaculis facilisis.</p>
+        </li>
+        <li class="capability-list__item">
+          <img src="/images/dest/student.jpg" alt="">
+          <h4 class="title">Студенту</h4>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris vitae commodo mi. Aliquam hendrerit id magna vel molestie. Aenean non consequat urna, eu laoreet erat. Sed egestas iaculis facilisis.</p>
+        </li>
+        <li class="capability-list__item">
+          <img src="/images/dest/manager.jpg" alt="">
+          <h4 class="title">Менеджеру</h4>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris vitae commodo mi. Aliquam hendrerit id magna vel molestie. Aenean non consequat urna, eu laoreet erat. Sed egestas iaculis facilisis.</p>
+        </li>
+      </ul>
+      <div class="subscribe">
+        <h3 class="subscribe-title">Sign up for our newsletter</h3>
+        <h4 class="subscribe-subtitle">
+          Useful articles, promotions, news - get it all now!
+        </h4>
+        <form class="form-subscibe" id="form-subscibe" action="#" method="post">
+          <input id="subscibe-email" type="email" placeholder="Ваш e-mail" required>
+          <label for="subscibe-email">Ваш e-mail</label>
+          <button class="btn">Подписаться</button>
+        </form>
+      </div>
+    </div>
+  </section>
+  <!-- /.capability -->
+</main>
+<!-- /.content -->
+
+
+
+<script>
+  
+  
+  $(document).ready(function () {
+    
+    // Gets the video src from the data-src on each button
+    
+    var $videoSrc;
+    $('.video-btn').click(function () {
+      
+      $videoSrc = $(this).data("src");
+      $("#video").attr('src', $videoSrc);
+      console.log($videoSrc);
+    });
+    
+    
+    $('#myModal').on('shown.bs.modal',
+      function (e) {
+        $("#video").attr('src', $videoSrc + "?autoplay=1&amp;modestbranding=1&amp;showinfo=0");
+      });
+    
+    $('#myModal').on('hide.bs.modal',
+      function (e) {
+        // stop video
+        $("#video").attr('src', $videoSrc);
+      });
+  });
+
+
+</script>
+
+<footer class="footer">
+  <div class="container">
+    <div class="copyright">
+      (с)
+      <script>var mdate = new Date(); document.write(mdate.getFullYear());</script>. Все права защищены.
+    </div>
+  </div>
+</footer>
+
+
+
+<div id="loginModal" class="w3-modal" style="display: none;">
+  <div class="w3-modal-content w3-card-4 w3-animate-zoom">
+    
+    <div class="w3-center">
+      <br>
+      <span onclick=" document.getElementById('loginModal').style.display = 'none';" class="w3-button w3-xlarge w3-hover-red w3-display-topright" title="Close Modal">×</span>
+    </div>
+    <div class="w3-center">
+      <div id="dvT"></div>
+      <form action="/Account/ExternalLogin" method="post"><input name="__RequestVerificationToken" type="hidden" value="AriUf96wwfw-RWkktGDICybMjA2EK_JpLRDxpOTN0EeD4ri7AmXHaFBrdE_pnJxaLHmaNbYaXg8xKA9B7sMLO99Wi2DS7kxMPajHfXbxXh6OtWbA1a114XQD4-cz1TBVzJsTf52UdGMD2kaL-c74XQ2" />                            <div id="socialLoginList">
+        <p>
+          <button type="submit" id="Google" name="provider" value="Google" title="Войти с помощью Google "><img src='/Content/img/Google.png' alt="Google" /> </button>
+          <button type="submit" id="Facebook" name="provider" value="Facebook" title="Войти с помощью Facebook "><img src='/Content/img/Facebook.png' alt="Facebook" /> </button>
+        </p>
+      </div>
+      </form>
+    </div>
+    <div class="w3-container w3-border-top w3-padding-16 w3-light-grey">
+      <!--<button onclick="document.getElementById('loginModal').style.display='none'" type="button" class="w3-button w3-red">Cancel</button>-->
+    
+    </div>
+  
+  </div>
+</div>
+
+
+
+
+<script>
+  
+  function signup() {
+    document.getElementById('loginModal').style.display = 'block';
+    $("#dvT").html("<h2>Регистрация</h2>");
+  }
+  function login() {
+    document.getElementById('loginModal').style.display = 'block';
+    $("#dvT").html("<h2>Вход</h2>");
+  }
+
+</script>
+</body>
+</html>

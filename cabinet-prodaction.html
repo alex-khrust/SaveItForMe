@@ -1,0 +1,287 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+  
+  
+  <meta charset="utf-8">
+  <title>SaveItForMe</title>
+  <meta name="description" content="SaveItForMe">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="">
+  <meta property="og:site_name" content="За&lt;span&gt;Помни&lt;/span&gt;">
+  <meta property="og:title" content="За&lt;span&gt;Помни&lt;/span&gt;">
+  
+  <link rel="icon" href="/images/favicon.png">
+  
+  <link rel="stylesheet" href="https://alex-khrust.github.io/SaveItForMe/css/app.min.css">
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/knockout/3.5.0/knockout-min.js"></script>
+  <script src="/Scripts/app.min.js"></script>
+  <script src="/Scripts/jquery-3.4.1.js"></script>
+  <script src="/Scripts/jquery-ui.js"></script>
+  <script src="/Scripts/jquery.datetimepicker.full.min.js"></script>
+  
+  <script src="/Scripts/intro.min.js"></script>
+  <script src="/Scripts/dataOperation.js"></script>
+  <script src="/Scripts/script.js"></script>
+  <script src="/Scripts/jquery.simulate.js"></script>
+
+
+
+
+
+
+
+</head>
+<body>
+
+
+
+<header class="header">
+  <div class="container">
+    <div class="logo">
+      <a href="/">
+        SaveIt<span>ForMe</span>
+      </a>
+    </div>
+    <button class="navBurger" role="navigation" id="navToggle">
+      <span class="navBurger-line"></span>
+    </button>
+    <input type="search" class="header-search" name="header-search" id="header-search" placeholder="Поиск по сайту">
+    
+    <button class="[ toggle-button ] [ js-mode-toggle ] toggle-button__icon" aria-hidden="true"></button>
+    
+    <div class="lang">
+      <a class="active lang" data-lang="eng" id="eng" href="#">Eng</a>
+    </div>
+    <!-- <a class="notification" href="#">
+ <span id="ntfctn-total">5</span>
+</a>-->
+    <a class="cabinet-link" href="#">
+      <img src="/Content/img/img_avatar.png" alt="Фото пользователя" class="user-photo">
+      <div class="text">
+        <p class="user-name">st.alex.ser@gmail.com</p>
+        <!--<p class="subtitle">Личный кабинет</p>-->
+      </div>
+    </a>
+  </div>
+</header>
+
+
+
+
+<style>
+  .closeDiv {
+    width: 20px;
+    height: 21px;
+    background-color: rgb(35, 179, 119);
+    float: left;
+    cursor: pointer;
+    color: white;
+    box-shadow: 2px 2px 7px rgb(74, 72, 72);
+    text-align: center;
+    margin: 5px;
+  }
+  
+  .pDiv {
+    float: left;
+    width: 100%
+  }
+  
+  .imgKLIK5:hover {
+    color: #fff;
+    background: black;
+    z-index: 1;
+  }
+</style>
+
+
+<div class="container">
+  <aside class="sidebar">
+    <nav class="nav">
+      <ul id="accordion" class="accordion">
+        
+        
+        <li class="dropdawn-submenu open" id="hint_step1">
+          <span>Мои Категории </span>
+          <ul class="submenu">
+            <li><a href="#" class="lddt" data-id="157" data-tp="load" data-type="0">Картинки (4) </a></li>
+            <li><a href="#" class="lddt" data-id="159" data-tp="load" data-type="0">Отдых (1) </a></li>
+            <li><a href="#" class="lddt" data-id="161" data-tp="load" data-type="0">Важное (0) </a></li>
+          </ul>
+        </li>
+        <li class="dropdawn-submenu" id="hint_step2">
+          <span>Мои хэш теги</span>
+          <ul class="submenu">
+            <li><a href="#" class="lddt" data-id="10162" data-tp="load" data-type="1">фото (2) </a></li>
+            <li><a href="#" class="lddt" data-id="10164" data-tp="load" data-type="1">еда (1) </a></li>
+            <li><a href="#" class="lddt" data-id="10166" data-tp="load" data-type="1">юмор (0) </a></li>
+          </ul>
+        </li>
+      
+      </ul>
+    </nav>
+    
+    
+    
+    <a href="/Account/Logout" class="btn">Выйти</a>
+  </aside>
+  
+  
+  <!-- /.sidebar -->
+  
+  <main class="content">
+    <section class="tabs-notes">
+      <div class="tabs">
+        <ul class="tabs__list">
+          <li class="active"><a href="#">Записи</a></li>
+          <li><a href="#">Задачи</a></li>
+          <li><a href="#">Картинки</a></li>
+          <li><a href="#">Напоминания</a></li>
+          <li><a href="#" onclick="Auth('login');">ТЕст</a> </li>
+          <!--<li><a href="#">Все</a></li>
+          <li><a href="#">Все</a></li>-->
+        </ul>
+      </div>
+      <!-- /.tabs -->
+      <div class="tabs-content">
+        <div class="notes">
+          <ul class="notes-list">
+            <div id="posts" data-bind="foreach:Posts">
+              <li class="notes-list__item">
+                <div class="created">
+                  <span class="create__date" data-bind="text: PostCreated"></span>
+                </div>
+                <h3 class="title" data-bind="html: PureText"></h3>
+                
+                <div class="hashtag-list" data-bind="foreach:Tags">
+                  <a href="#" data-tp="load" data-bind="attr: {  text: Title, class: Class, 'data-type': Type,'data-id':Id}, text: Title"></a>
+                </div>
+                
+                <div class="remember" data-bind="foreach: Reminds">
+                  <span class="remember__time" data-bind="text: DateTime"></span>
+                  <!--<span class="remember__date">Сегодня</span>-->
+                  <!--<div class="remember__confirmation">
+                      <input id="remember__confirmation-chbx--1" type="checkbox">
+                      <label for="remember__confirmation-chbx--1"></label>
+                  </div>-->
+                </div>
+              </li>
+            </div>
+          </ul>
+        </div>
+        <!-- /.notes -->
+      </div>
+      <!-- /.tabs-content -->
+    </section>
+    <!-- /.tabs-notes -->
+    <section class="add">
+      <div class="description">
+        <p>
+          Введите то что вы хотите сохранить<br>
+          Используй категории и хэш теги для поиска в будущем:<br>
+          <strong>! для категории </strong><br>
+          <strong># хэш тег </strong>
+          <br>
+          <i class="glyphicon glyphicon-check">Задача</i> <br>
+          <i class="glyphicon glyphicon-calendar">Дата</i> <br>
+          <i class="glyphicon glyphicon-bell">Напоминание</i> <br>
+        </p>
+      </div>
+      <div class="note-save">
+        <!--     <form action="#" id="new-note-form" method="post">-->
+        <!-- <textarea name="" id="" placeholder="Начни вводить свой текст . . ."></textarea>
+        <div class="btns">
+            <button class="emoji-add" id="emoji"></button>
+            <div class="file-add">
+                <input id="file-add" type="file">
+                <label for="file-add"></label>
+            </div>
+            <button class="send-btn" id="send-btn" type="submit" form="new-note-form"></button>
+        </div>-->
+        <div class="box-select-tag" id="bxSel">
+          
+          <div class="box-input-tag" id="inTag">
+            <div class="box-show-data">
+              <input type="text" autocomplete="off" id="search">
+              <ul class="list-item"></ul>
+            </div>
+            <div class="box-show-tag" id="txtBox"></div>
+          
+          </div>
+        </div>
+        
+        <div id="taskInput"></div>
+        
+        <div id="datetimepicker"></div>
+        <div class="btns">
+          <button class="emoji-add" id="emoji"></button>
+          <div class="file-add">
+            <input id="file-add" type="file">
+            <label for="file-add"></label>
+          </div>
+          <button class="send-btn" id="btn" type="submit" form="new-note-form"></button>
+        </div>
+        
+        
+        <canvas id="canvas" hidden="" width=64 height=64></canvas>
+        
+        <div id="thumbnail"></div>
+        <!--<input type="file" id="flUp" onchange="uploadfile(event)" style="display: none;" />-->
+        <!--  </form>-->
+      </div>
+    
+    </section>
+    <!-- /.add -->
+  </main>
+  <!-- /.content -->
+</div>
+<!-- /.container for page -->
+
+<!-- /.header -->
+<!--scripts --------------------->
+
+
+<script type="text/javascript" src="//www.gstatic.com/firebasejs/3.6.8/firebase.js"></script>
+<script type="text/javascript" src="/Scripts/firebase_subscribe.js"></script>
+
+<script src="/Scripts/app-ru.js"></script>
+
+
+
+
+<script>
+  
+  
+  
+  function uploadfile(ev) {
+    console(ev);
+    
+    var files = ev.target.files; // FileList object
+    console.log(files);
+    // files is a FileList of File objects. List some properties.
+    var output = [];
+    var f = {};
+    /*for (var i = 0,  f = files[i]; i++) {
+        output.push('<li><strong>', escape(f.name), '</strong> (', f.type || 'n/a', ') - ',
+            f.size, ' bytes, last modified: ',
+            f.lastModifiedDate ? f.lastModifiedDate.toLocaleDateString() : 'n/a',
+            '</li>');
+    }*/
+    
+    //document.getElementById('list').innerHTML = '<ul>' + output.join('') + '</ul>';
+  }
+  
+  
+  //   document.getElementById('asgnmnt_file_img').src = window.URL.createObjectURL(inputData.files[0])
+
+
+</script>
+
+
+
+
+</body>
+</html>
