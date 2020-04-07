@@ -34,10 +34,9 @@ document.addEventListener("DOMContentLoaded", function() {
   // });
   
   //---------------------------------------------------------------
-  var popup = $(".form-enter");
   $(".log-in").click (function () {
     $('.tab-content > div').siblings().hide();
-    $(".login-modal, #login").fadeIn(150).show();
+    $(".login-modal, #login").fadeIn(150).css( "display", "flex" );
     $('.tab:nth-child(2)').addClass('active').siblings().removeClass('active');
     $('body').css('overflow', 'hidden');
     $('header, section, aside, footer').css({
@@ -47,7 +46,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
   $(".register").click (function () {
     $('.tab-content > div').siblings().hide();
-    $(".login-modal, #signup").fadeIn(150).show();
+    $(".login-modal, #signup").fadeIn(150).css( "display", "flex" );
     $('.tab:nth-child(1)').addClass('active').siblings().removeClass('active');
     $('body').css('overflow', 'hidden');
     $('header, section, aside, footer').css({
@@ -56,12 +55,25 @@ document.addEventListener("DOMContentLoaded", function() {
   });
 
   $(".login-modal").mouseup(function (e){
+    var popup = $(".form-enter");
     if (!popup.is(e.target)
       && popup.has(e.target).length === 0) {
       $('header, section, aside, footer').css({
         "filter": "blur(0)"
       });
-      $(".login-modal").fadeOut(300).hide();
+      $(".login-modal").hide(50).fadeOut();
+      $('body').css('overflow', 'auto');
+    }
+  });
+  $(".cross-btn").click(function (e){
+    var popup = $(".form-enter");
+    if (!popup.is(e.target)
+      && popup.has(e.target).length === 0) {
+      $('header, section, aside, footer').css({
+        "filter": "blur(0)"
+      });
+      $(".login-modal").hide(50).fadeOut();
+      $('body').css('overflow', 'auto');
     }
   });
   //---------------------------------------------------------------------------
