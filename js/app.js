@@ -54,25 +54,24 @@ document.addEventListener("DOMContentLoaded", function() {
     });
   });
 
+  var popup = $(".form-enter");
   $(".login-modal").mouseup(function (e){
-    var popup = $(".form-enter");
     if (!popup.is(e.target)
       && popup.has(e.target).length === 0) {
       $('header, section, aside, footer').css({
         "filter": "blur(0)"
       });
-      $(".login-modal").hide(50).fadeOut();
+      $(".login-modal").fadeOut(150);
       $('body').css('overflow', 'auto');
     }
   });
   $(".cross-btn").click(function (e){
-    var popup = $(".form-enter");
     if (!popup.is(e.target)
       && popup.has(e.target).length === 0) {
       $('header, section, aside, footer').css({
         "filter": "blur(0)"
       });
-      $(".login-modal").fadeOut().hide(50);
+      $(".login-modal").fadeOut(150);
       $('body').css('overflow', 'auto');
     }
   });
