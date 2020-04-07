@@ -72,7 +72,7 @@ document.addEventListener("DOMContentLoaded", function() {
       $('header, section, aside, footer').css({
         "filter": "blur(0)"
       });
-      $(".login-modal").hide(50).fadeOut();
+      $(".login-modal").fadeOut().hide(50);
       $('body').css('overflow', 'auto');
     }
   });
