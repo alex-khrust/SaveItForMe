@@ -471,8 +471,10 @@ $items: facebook #3b5998 #FFF, googleplus #dd4b39 #FFF;
     &.#{nth($item, 1)} {
       background: nth($item, 2);
       color: nth($item, 3);
+      padding: 0;
+      border: none;
 
-      a {
+      a, button {
         color: nth($item, 3);
       }
       .connect__context:hover {

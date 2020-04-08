@@ -220,9 +220,18 @@ document.addEventListener("DOMContentLoaded", function() {
     $(target).fadeIn(600);
     
   });
+  //--------------------------------------------------------------
   
-  
-  
+  wow = new WOW(
+    {
+      boxClass:     'wow',
+      animateClass: 'animated',
+      offset:       0,
+      mobile:       false,
+      live:         false,
+    }
+  );
+  wow.init();
   //--------------------------------------------------------------
 });
 
