@@ -100,7 +100,12 @@ document.addEventListener("DOMContentLoaded", function() {
     });
   });
   //---------------------------------------------------------------------------
-  //initialize swiper when document ready
+  // search ---------------------------------------------
+  $( ".search-btn" ).click(function(){
+    $( ".search-container" ).slideToggle();
+  });
+  //---------------------------------------------------------------------------
+  //initialize swiper when document ready -----------------------
   var mySwiper = new Swiper ('.demo-slider', {
     // Optional parameters
     direction: 'horizontal',

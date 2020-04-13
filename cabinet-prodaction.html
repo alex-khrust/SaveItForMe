@@ -14,30 +14,25 @@
   <meta property="og:title" content="За&lt;span&gt;Помни&lt;/span&gt;">
   
   <link rel="icon" href="/images/favicon.png">
-  
-  <link rel="stylesheet" href="https://alex-khrust.github.io/SaveItForMe/css/app.min.css">
+  <link rel="stylesheet" href="css/app.min.css" />
   <script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/knockout/3.5.0/knockout-min.js"></script>
+  <base href="https://zapomni.com.ua/">
+  <link rel="stylesheet" href="/Content/autocomplete.css">
+  <script src="/Scripts/libs.min.js"></script>
   <script src="/Scripts/app.min.js"></script>
-  <script src="/Scripts/jquery-3.4.1.js"></script>
-  <script src="/Scripts/jquery-ui.js"></script>
   <script src="/Scripts/jquery.datetimepicker.full.min.js"></script>
-  
   <script src="/Scripts/intro.min.js"></script>
   <script src="/Scripts/dataOperation.js"></script>
   <script src="/Scripts/script.js"></script>
   <script src="/Scripts/jquery.simulate.js"></script>
-
-
-
-
+  <script src="/Scripts/jquery-ui.js"></script>
+  <script src="/Scripts/search.js"></script>
 
 
 
 </head>
 <body>
-
-
 
 <header class="header">
   <div class="container">
@@ -49,15 +44,16 @@
     <button class="navBurger" role="navigation" id="navToggle">
       <span class="navBurger-line"></span>
     </button>
-    <input type="search" class="header-search" name="header-search" id="header-search" placeholder="Поиск по сайту">
+    <input type="search" autocomplete="true" class="header-search" name="header-search" id="header-search" placeholder="Поиск по сайту">
     
     <button class="[ toggle-button ] [ js-mode-toggle ] toggle-button__icon" aria-hidden="true"></button>
     
     <div class="lang">
+      
       <a class="active lang" data-lang="eng" id="eng" href="#">Eng</a>
     </div>
     <!-- <a class="notification" href="#">
- <span id="ntfctn-total">5</span>
+<span id="ntfctn-total">5</span>
 </a>-->
     <a class="cabinet-link" href="#">
       <img src="/Content/img/img_avatar.png" alt="Фото пользователя" class="user-photo">
@@ -95,6 +91,19 @@
     background: black;
     z-index: 1;
   }
+  
+  
+  
+  .ui-menu img{
+    width:40px;
+    height:40px;
+  }
+  .ui-menu li span{
+    font-size:2em;
+    padding:0 0 10px 10px;
+    margin:0 0 10px 0 !important;
+    white-space:nowrap;
+  }
 </style>
 
 
@@ -103,11 +112,10 @@
     <nav class="nav">
       <ul id="accordion" class="accordion">
         
-        
         <li class="dropdawn-submenu open" id="hint_step1">
           <span>Мои Категории </span>
           <ul class="submenu">
-            <li><a href="#" class="lddt" data-id="157" data-tp="load" data-type="0">Картинки (4) </a></li>
+            <li><a href="#" class="lddt" data-id="157" data-tp="load" data-type="0">Картинки (6) </a></li>
             <li><a href="#" class="lddt" data-id="159" data-tp="load" data-type="0">Отдых (1) </a></li>
             <li><a href="#" class="lddt" data-id="161" data-tp="load" data-type="0">Важное (0) </a></li>
           </ul>
@@ -115,16 +123,13 @@
         <li class="dropdawn-submenu" id="hint_step2">
           <span>Мои хэш теги</span>
           <ul class="submenu">
-            <li><a href="#" class="lddt" data-id="10162" data-tp="load" data-type="1">фото (2) </a></li>
+            <li><a href="#" class="lddt" data-id="10162" data-tp="load" data-type="1">фото (4) </a></li>
             <li><a href="#" class="lddt" data-id="10164" data-tp="load" data-type="1">еда (1) </a></li>
             <li><a href="#" class="lddt" data-id="10166" data-tp="load" data-type="1">юмор (0) </a></li>
           </ul>
         </li>
-      
       </ul>
     </nav>
-    
-    
     
     <a href="/Account/Logout" class="btn">Выйти</a>
   </aside>
@@ -145,8 +150,50 @@
           <li><a href="#">Все</a></li>-->
         </ul>
       </div>
+      
       <!-- /.tabs -->
       <div class="tabs-content">
+        <div class="note-save">
+          <!--     <form action="#" id="new-note-form" method="post">-->
+          <!-- <textarea name="" id="" placeholder="Начни вводить свой текст . . ."></textarea>
+          <div class="btns">
+              <button class="emoji-add" id="emoji"></button>
+              <div class="file-add">
+                  <input id="file-add" type="file">
+                  <label for="file-add"></label>
+              </div>
+              <button class="send-btn" id="send-btn" type="submit" form="new-note-form"></button>
+          </div>-->
+          <div class="box-select-tag" id="bxSel">
+            
+            <div class="box-input-tag" id="inTag">
+              <div class="box-show-data">
+                <input type="text" autocomplete="off" id="search">
+                <ul class="list-item"></ul>
+              </div>
+              <div class="box-show-tag" id="txtBox"></div>
+            </div>
+          </div>
+          
+          <div id="taskInput" style="display: none"></div>
+          
+          <div id="datetimepicker"></div>
+          <div class="btns">
+            <!-- <button class="emoji-add" id="emoji"></button>-->
+            <div class="file-add">
+              <input id="file-add" type="file">
+              <label for="file-add"></label>
+            </div>
+            <button class="send-btn" id="btn" type="submit" form="new-note-form"></button>
+          </div>
+          
+          
+          <canvas id="canvas" hidden="" width=64 height=64></canvas>
+          
+          <div id="thumbnail"></div>
+          <!--<input type="file" id="flUp" onchange="uploadfile(event)" style="display: none;" />-->
+          <!--  </form>-->
+        </div>
         <div class="notes">
           <ul class="notes-list">
             <div id="posts" data-bind="foreach:Posts">
@@ -164,9 +211,9 @@
                   <span class="remember__time" data-bind="text: DateTime"></span>
                   <!--<span class="remember__date">Сегодня</span>-->
                   <!--<div class="remember__confirmation">
-                      <input id="remember__confirmation-chbx--1" type="checkbox">
-                      <label for="remember__confirmation-chbx--1"></label>
-                  </div>-->
+          <input id="remember__confirmation-chbx--1" type="checkbox">
+          <label for="remember__confirmation-chbx--1"></label>
+      </div>-->
                 </div>
               </li>
             </div>
@@ -190,48 +237,7 @@
           <i class="glyphicon glyphicon-bell">Напоминание</i> <br>
         </p>
       </div>
-      <div class="note-save">
-        <!--     <form action="#" id="new-note-form" method="post">-->
-        <!-- <textarea name="" id="" placeholder="Начни вводить свой текст . . ."></textarea>
-        <div class="btns">
-            <button class="emoji-add" id="emoji"></button>
-            <div class="file-add">
-                <input id="file-add" type="file">
-                <label for="file-add"></label>
-            </div>
-            <button class="send-btn" id="send-btn" type="submit" form="new-note-form"></button>
-        </div>-->
-        <div class="box-select-tag" id="bxSel">
-          
-          <div class="box-input-tag" id="inTag">
-            <div class="box-show-data">
-              <input type="text" autocomplete="off" id="search">
-              <ul class="list-item"></ul>
-            </div>
-            <div class="box-show-tag" id="txtBox"></div>
-          
-          </div>
-        </div>
-        
-        <div id="taskInput"></div>
-        
-        <div id="datetimepicker"></div>
-        <div class="btns">
-          <button class="emoji-add" id="emoji"></button>
-          <div class="file-add">
-            <input id="file-add" type="file">
-            <label for="file-add"></label>
-          </div>
-          <button class="send-btn" id="btn" type="submit" form="new-note-form"></button>
-        </div>
-        
-        
-        <canvas id="canvas" hidden="" width=64 height=64></canvas>
-        
-        <div id="thumbnail"></div>
-        <!--<input type="file" id="flUp" onchange="uploadfile(event)" style="display: none;" />-->
-        <!--  </form>-->
-      </div>
+    
     
     </section>
     <!-- /.add -->
@@ -280,8 +286,8 @@
 
 </script>
 
+<ul id="ui-id-1" tabindex="0" class="ui-menu ui-widget ui-widget-content ui-autocomplete ui-front" style="position: relative;top: -2076.28px;left: 225.188px;z-index: 1000;display: block;width: 1361px;"><li class="ui-menu-item"><div id="ui-id-46" tabindex="-1" class="ui-menu-item-wrapper"><img src="https://zapomni.com.ua/att/4294d977/ovons4pm.jpg"><span>мотоцикл припаркован на траве</span></div></li><li class="ui-menu-item"><div id="ui-id-47" tabindex="-1" class="ui-menu-item-wrapper"><img src="https://zapomni.com.ua/att/3f58337d/jzz3yex2.jpg"><span>sdcsdsdcsd dscsdcsdc</span></div></li></ul>
 
-
-
+<div role="status" aria-live="assertive" aria-relevant="additions" class="ui-helper-hidden-accessible"><div style="display: none;">2 results are available, use up and down arrow keys to navigate.</div><div style="display: none;">2 results are available, use up and down arrow keys to navigate.</div><div style="display: none;">2 results are available, use up and down arrow keys to navigate.</div><div style="display: none;">2 results are available, use up and down arrow keys to navigate.</div><div>2 results are available, use up and down arrow keys to navigate.</div></div>
 </body>
 </html>
