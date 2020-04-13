@@ -126,6 +126,7 @@
 	flex-flow: row wrap;
 	border-radius: 5px;
 	word-wrap: break-word;
+	outline: none;
 }
 
 	.box-show-tag br,
