@@ -129,7 +129,8 @@
   &__time
     position: relative
     font: 600 12px $montserrat
-    color: $grey
+    color: var(--remember__time)
+    transition: color 700ms ease
     padding-left: 31px
     margin-right: 9px
     &:before
@@ -139,7 +140,9 @@
       left: 0
       width: 24px
       height: 24px
-      background: url("../images/dest/remember__time.svg") no-repeat
+      transition: 500ms ease
+      mask: url("../images/dest/remember__time.svg") no-repeat
+      background: var(--remember__time)
 
   &__date
     font: 500 12px $rubik

@@ -167,19 +167,28 @@ document.addEventListener("DOMContentLoaded", function() {
   
   //---------------------------------------------------------------------
   // Fancybox ---------------------------------
-  // $('.notes-list__item').on('click', function() {
-  //   $.fancybox.open( $(this), {
-  //     // infobar: false,
-  //     zoom: false,
-  //     closeExisting: false,
-  //     type : 'inline',
-  //     smallBtn: "false",
-  //     toolbar: "auto",
-  //     buttons : [
-  //       'close'
-  //     ],
-  //   });
-  // });
+  $('.picture').fancybox({
+    zoom: true,
+    afterLoad : function(instance, current) {
+      var pixelRatio = window.devicePixelRatio || 1;
+      
+      if ( pixelRatio > 1.5 ) {
+        current.width  = current.width  / pixelRatio;
+        current.height = current.height / pixelRatio;
+      }
+    }
+  });
+  
+  $('.video').fancybox({
+    closeExisting: true,
+    // youtube : {
+    //     controls : 0,
+    //     showinfo : 0
+    //   },
+    //   vimeo : {
+    //     color : 'f00'
+    //   }
+  });
   //---------------------------------------------------------------------
   
   $('.form-enter').find('input, textarea').on('keyup blur focus', function (e) {
@@ -227,16 +236,16 @@ document.addEventListener("DOMContentLoaded", function() {
   });
   //--------------------------------------------------------------
   
-  wow = new WOW(
-    {
-      boxClass:     'wow',
-      animateClass: 'animated',
-      offset:       0,
-      mobile:       false,
-      live:         false,
-    }
-  );
-  wow.init();
+  // wow = new WOW(
+  //   {
+  //     boxClass:     'wow',
+  //     animateClass: 'animated',
+  //     offset:       0,
+  //     mobile:       false,
+  //     live:         false,
+  //   }
+  // );
+  // wow.init();
   //--------------------------------------------------------------
 });
 

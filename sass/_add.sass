@@ -83,32 +83,45 @@
       align-items: center
       justify-content: center
       cursor: pointer
-      background-color: unset
+      position: relative
+      background: unset
       border-radius: 50%
       border: none
+      transition: .3s ease
+      &:after
+        content: ''
+        position: absolute
+        top: 50%
+        left: 50%
+        transform: translate(-50%, -50%)
+        width: 30px
+        height: 30px
+        background: var(--note-btn)
+        transition: .3s
+      &:hover
+        background: $green
+        &:after
+          background: #fff
+
     button, .file-add
       margin-left: 10px
 
-  .emoji-add
-    background: url(../images/dest/emoji.svg) no-repeat
-    &:hover
-      background: $green url(../images/dest/emoji.svg) no-repeat
+  .emoji-add:after
+    mask: url(../images/dest/emoji.svg) no-repeat center
 
   .file-add
     width: 30px
     height: 30px
     input
       display: none
-    label
-      background: url(../images/dest/file.svg) no-repeat
-      &:hover
-        background: $green url(../images/dest/file.svg) no-repeat
+    label:after
+      mask: url(../images/dest/file.svg) no-repeat center
 
-  .send-btn
-    background: url(../images/dest/send.svg) no-repeat
-    &:hover
-      background: $green url(../images/dest/send.svg) no-repeat
+  .send-btn:after
+    mask: url(../images/dest/send.svg) no-repeat center
 
+  form .btns button:after
+    display: none
 
 .box-show-tag
   outline: none

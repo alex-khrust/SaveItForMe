@@ -156,9 +156,9 @@
             </li>
             <li class="notes-list__item">
               <h3 class="title">Пересадить пальму</h3>
-              <div class="picture">
+              <a class="picture" href="images/dest/palm.png">
                 <img src="images/dest/palm.png" alt="Пальма">
-              </div>
+              </a>
               <div class="hashtag-list">
                 <a href="#" class="hashtag-list__link quickly">Срочно</a>
                 <a href="#" class="hashtag-list__link hobby">#hobby</a>
@@ -181,8 +181,24 @@
                 <span class="create__date" data-bind="text: PostCreated">1 апреля 2020 г.</span>
               </div>
               <h3 class="title" data-bind="html: PureText"></h3>
-              <a href="">
-                <img src="https://zapomni.com.ua/att/3f58337d/dk_mfrruttm.png" alt=" ">
+              <a class="picture" href="https://zapomni.com.ua/att/3f58337d/dk_jzz3yex2.jpg">
+                <img src="https://zapomni.com.ua/att/3f58337d/dk_jzz3yex2.jpg" alt=" ">
+              </a>
+              <div class="hashtag-list" data-bind="foreach:Tags">
+                <a href="#" data-tp="load" data-bind="attr: {  text: Title, class: Class, 'data-type': Type,'data-id':Id}, text: Title" text="Картинки" class="hashtag-list__link hashtag" data-type="0" data-id="157">Картинки</a>
+      
+                <a href="#" data-tp="load" data-bind="attr: {  text: Title, class: Class, 'data-type': Type,'data-id':Id}, text: Title" text="фото" class="lddt hashtag-list__link category " data-type="1" data-id="10162">фото</a>
+              </div>
+    
+              <div class="remember" data-bind="foreach: Reminds"></div>
+            </li>
+            <li class="notes-list__item">
+              <div class="created">
+                <span class="create__date" data-bind="text: PostCreated">1 апреля 2020 г.</span>
+              </div>
+              <h3 class="title" data-bind="html: PureText"></h3>
+              <a class="video" href="https://www.youtube.com/watch?v=CevK1XUCbB0">
+                YouTube video
               </a>
               <div class="hashtag-list" data-bind="foreach:Tags">
                 <a href="#" data-tp="load" data-bind="attr: {  text: Title, class: Class, 'data-type': Type,'data-id':Id}, text: Title" text="Картинки" class="hashtag-list__link hashtag" data-type="0" data-id="157">Картинки</a>
@@ -238,7 +254,38 @@
 <!--          </div>-->
 <!--        </form>-->
 <!--      </div>-->
-  
+          <div class="note-save">
+            <div class="box-select-tag" id="bxSel">
+          
+              <div class="box-input-tag" id="inTag">
+                <div class="box-show-data">
+                  <input type="text" autocomplete="off" id="search">
+                  <ul class="list-item"></ul>
+                </div>
+                <div class="box-show-tag" id="txtBox"></div>
+                <div id="taskInput" style="display: none;"></div>
+              </div>
+            </div>
+        
+        
+        
+            <div id="datetimepicker"></div>
+            <div class="btns">
+               <button class="emoji-add" id="emoji"></button>
+              <div class="file-add">
+                <input id="file-add" type="file">
+                <label for="file-add"></label>
+              </div>
+              <button class="send-btn" id="btn" type="submit" form="new-note-form"></button>
+            </div>
+        
+        
+            <canvas id="canvas" hidden="" width="64" height="64"></canvas>
+        
+            <div id="thumbnail"></div>
+            <!--<input type="file" id="flUp" onchange="uploadfile(event)" style="display: none;" />-->
+            <!--  </form>-->
+          </div>
       <div class="note-save">
         <!--     <form action="#" id="new-note-form" method="post">-->
         <!-- <textarea name="" id="" placeholder="Начни вводить свой текст . . ."></textarea>
@@ -282,7 +329,7 @@
         <!--<input type="file" id="flUp" onchange="uploadfile(event)" style="display: none;" />-->
         <!--  </form>-->
       </div>
-      
+    
     </section>
     <!-- /.add -->
   </main>

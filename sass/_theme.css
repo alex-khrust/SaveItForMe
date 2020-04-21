@@ -35,18 +35,10 @@
   --cabinet-link-user-photo-dark: #0EC92D;
   --tabs: var(--text-color);
   --tabs-dark: #75818C;
-  --notification: url("../images/dest/notification.svg") no-repeat;
-  --notification-dark: url("../images/dest/notification-dark.svg") no-repeat;
+  --notification: #000;
   --remember__time: #807f8f;
   --remember__time-dark: #0EC92D;
-  --remember__time-img: url(../images/dest/remember__time.svg) no-repeat;
-  --remember__time-img-dark: url(../images/dest/remember__time-dark.svg) no-repeat;
-  --emoji: url(../images/dest/emoji.svg) no-repeat;
-  --emoji-dark: url(../images/dest/emoji-dark.svg) no-repeat;
-  --file: url(../images/dest/file.svg) no-repeat;
-  --file-dark: url(../images/dest/file-dark.svg) no-repeat;
-  --send: url(../images/dest/send.svg) no-repeat;
-  --send-dark: url(../images/dest/send-dark.svg) no-repeat;
+  --note-btn: #000;
   --background-enter: var(--background-notes-dark);
   --text-color-enter: #fff;
 }
@@ -85,12 +77,10 @@ body {
   --background-notes-border: var(--background-notes-border-dark);
   --cabinet-link-user-photo: var(--cabinet-link-user-photo-dark);
   --tabs: var(--tabs-dark);
-  --notification: var(--notification-dark);
+  --notification: #fff;
   --remember__time: var(--remember__time-dark);
   --remember__time-img: var(--remember__time-img-dark);
-  --emoji: var(--emoji-dark);
-  --file: var(--file-dark);
-  --send: var(--send-dark);
+  --note-btn: var(--tabs-dark);
   --btn-hover: var(--btn-hover-dark);
   --background-enter: #F6F6F6;
   --text-color-enter: #060728;
@@ -360,35 +350,6 @@ header a,
 .tabs a {
   color: var(--tabs);
   transition: color 700ms ease;
-}
-
-.notification {
-  background: var(--notification) !important;
-  transition: 500ms ease-in-out;
-}
-
-.remember__time {
-  color: var(--remember__time);
-  transition: color 700ms ease;
-}
-.remember__time:before {
-  background: var(--remember__time-img);
-  transition: 500ms ease;
-}
-
-.note-save .emoji-add {
-  background: var(--emoji);
-  transition: 500ms ease;
-}
-
-.note-save .file-add label {
-  background: var(--file);
-  transition: 500ms ease;
-}
-
-.note-save .send-btn {
-  background: var(--send);
-  transition: 500ms ease;
 }
 
 .btn:hover {
